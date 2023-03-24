@@ -8,5 +8,5 @@ public class Pelicula {
     private enum genero{
         terror,accion,romance,comedia,suspense,aventura,drama,animacion,infantil,policiaca,misterio,historico,familiar,seasonal;
     }
-    private String Comentarios[];
+    private String Comentario[];
 }
