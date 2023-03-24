@@ -8,7 +8,7 @@ public class Pelicula {
     private enum genero{
         terror,accion,romance,comedia,suspense,aventura,drama,animacion,infantil,policiaca,misterio,historico,familiar,seasonal;
     }
-    private String Comentario[];
+    private String Comentarios[];
 
     public String getNombre() {
         return nombre;
@@ -29,8 +29,4 @@ public class Pelicula {
         this.valoracion = valoracion;
     }
 
-    
-
-
-    
 }
