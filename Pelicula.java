@@ -22,9 +22,9 @@ public class Pelicula {
     }
 
 
-    private ArrayList<String> Comentarios = new ArrayList<>();
-    public ArrayList<String> Peliculas = new ArrayList<>();
-    public ArrayList<String> PalabrasVetadas = new ArrayList<>();
+    public ArrayList<String> Comentarios = new ArrayList<>();
+    public static ArrayList<String> Peliculas = new ArrayList<>();
+    public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
 
     public String getNombre() {
         return nombre;
