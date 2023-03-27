@@ -63,7 +63,7 @@ public class Pelicula {
     public void añadirComentario(String comentario){
        boolean esta = false;
        for (int i = 0; i < RottenApp.PalabrasVetadas.size(); i++) {
-        if (PalabrasVetadas.get(i).contains(comentario)) {
+        if (RottenApp.PalabrasVetadas.get(i).contains(comentario)) {
             esta = true;
         }
        }
@@ -76,10 +76,10 @@ public class Pelicula {
     }
 
     //Función que añade titulos de peliculas al array para que no haya repetidas
-    public static void añadirPelicula(String peli){
+    /*public static void añadirPelicula( peli){
         boolean esta = false;
-        for (int i = 0; i < Peliculas.size(); i++) {
-            if(Peliculas.get(i).equals(peli)){
+        for (int i = 0; i < RottenApp.Peliculas.size(); i++) {
+            if(RottenApp.Peliculas.equals()){
                 esta = true;
             }
         }
@@ -87,9 +87,9 @@ public class Pelicula {
             System.out.println("Esa pelicula ya ha sido añadida");
         }
         else{
-            Peliculas.add(peli);
+            RottenApp.Peliculas.add(peli);
         }
-    }
+    }*/
     
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
