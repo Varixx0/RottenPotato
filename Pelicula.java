@@ -6,17 +6,19 @@ public class Pelicula {
     private int duracion;
     private double valoracion;
     private genero Tipo;
+    private String Descripcion;
     public  enum genero{
         terror,accion,romance,comedia,suspense,aventura,drama,animacion,infantil,policiaca,misterio,historico,familiar,seasonal;
     }
 
    
     //Constructor
-    public Pelicula(String nombre,int duracion,double valoracion,genero Genero){
+    public Pelicula(String nombre,int duracion,double valoracion,genero Genero, String Desc){
         this.nombre = nombre;
         this.duracion = duracion;
         this.valoracion = valoracion;
         this.Tipo = Genero;
+        this.Descripcion=Desc;
     }
 
     //Arrays
@@ -44,6 +46,13 @@ public class Pelicula {
         this.valoracion = valoracion;
     }
     
+    
+    public String getDescripcion() {
+        return Descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
+    }
     //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
     public static void añadirPalabraVetada(String palabra){
         PalabrasVetadas.add(palabra);
