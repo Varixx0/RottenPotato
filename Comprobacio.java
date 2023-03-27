@@ -1,9 +1,9 @@
 
 public class Comprobacio {
     
-    public static boolean comprobarValoracion(int index){
+    public static boolean comprobarValoracion(double valor){
         boolean bien = false;
-        if (RottenApp.Peliculas.get(index).getValoracion() > 0 && RottenApp.Peliculas.get(index).getValoracion() <= 5 ) {
+        if (valor >= 0 || valor <= 5) {
             bien = true;
         }
         return bien;
@@ -14,6 +14,7 @@ public class Comprobacio {
         for (int i = 0; i < RottenApp.Peliculas.size(); i++) { 
             if (RottenApp.Peliculas.get(i).getNombre().equals(nombre)) {
                 bien = false;
+                break;
             }
             else{
                 bien = true;
@@ -22,17 +23,17 @@ public class Comprobacio {
         return bien;
     }
 
-    public static boolean comprobarDuracion(int index){
+    public static boolean comprobarDuracion(int duracion){
         boolean bien = false;
-        if (RottenApp.Peliculas.get(index).getDuracion() >= 60) {
+        if (duracion >= 60) {
             bien = true;
         }
         return bien;
     }
 
-    public static boolean comprobarTodo(int index,String nombre){
+    public static boolean comprobarTodo(int duracion,String nombre,double valor){
         boolean bien = false;
-        if (comprobarDuracion(index) && comprobarNombre(nombre) &&comprobarValoracion(index)){
+        if (comprobarDuracion(duracion) && comprobarNombre(nombre) &&comprobarValoracion(valor)){
             bien = true;
         }
         return bien;
