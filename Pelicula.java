@@ -43,6 +43,9 @@ public class Pelicula {
     public void setValoracion(double valoracion) {
         this.valoracion = valoracion;
     }
+    public genero getGenero(){
+        return this.Tipo;
+    }
     
     //get
     public String getDescripcion() {
@@ -53,13 +56,13 @@ public class Pelicula {
     }
     //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
     public static void añadirPalabraVetada(String palabra){
-        PalabrasVetadas.add(palabra);
+        RottenApp.PalabrasVetadas.add(palabra);
     }
 
     //Función que añade comentario a la pelicula que escoja el usuario 
     public void añadirComentario(String comentario){
        boolean esta = false;
-       for (int i = 0; i < PalabrasVetadas.size(); i++) {
+       for (int i = 0; i < RottenApp.PalabrasVetadas.size(); i++) {
         if (PalabrasVetadas.get(i).contains(comentario)) {
             esta = true;
         }
