@@ -81,4 +81,12 @@ public class Pelicula {
     }
 
     
+    public void agregarValoracion(double valor){
+        if (valor < 0 || valor > 5) {
+            System.out.println("Valor mal introducido");
+        }
+        else{
+            this.valoracion = valor;
+        }
+    }
 }
