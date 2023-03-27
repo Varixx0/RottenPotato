@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class RottenApp {
     private static Scanner user = new Scanner (System.in);
     public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
@@ -9,7 +11,7 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-        
+        PideGenero();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true));
@@ -39,8 +41,32 @@ public class RottenApp {
         user.nextLine(); 
         return x;
     }
+
+    public static Pelicula.genero PideGenero() {
+        Pelicula.genero[] generos = Pelicula.genero.values();
+        System.out.println("Selecciona un género:");
+        for (int i = 0; i < generos.length; i++) {
+            System.out.println((i+1) + ". " + generos[i].toString());
+        }
+        int seleccion = PideInt();
+        if (seleccion < 1 || seleccion > generos.length) {
+            System.out.println("Selección inválida");
+            return null;
+        } else {
+            return generos[seleccion - 1];
+        }
+    }
+
     //Metodos principales
     public static void CrearPelicula(){
-        
+        System.out.println("Dame el nombre de la película");
+        String nombre = PideString();
+        System.out.println("Dame la duración de la película");
+        int duracion = PideInt();
+        System.out.println("Dame la valoración de la película");
+        double valoracion = PideDouble();
+        Pelicula.genero genero = PideGenero();
+        System.out.println("Esccribe una descripción");
+        String descrip = PideString();
     }
 }

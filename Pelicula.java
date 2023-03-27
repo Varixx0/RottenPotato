@@ -71,7 +71,7 @@ public class Pelicula {
         System.out.println("Has usado palabras vetadas");
        }
        else{
-        this.Comentarios.add(comentario);
+        Comentarios.add(comentario);
        }
     }
 
