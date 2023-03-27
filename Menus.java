@@ -1,22 +1,25 @@
-import com.apple.eawt.event.RotationEvent;
 
 public class Menus {
+    //Imprime el menu principal
     public static void ImprimeMenu() {
         System.out.println("Elige la opcion que deseas ejecutar");
         System.out.println("1. Crear Pelicula");
         System.out.println("2. Ver Peliculas");
         System.out.println("3. Modificar Cuenta");
         System.out.println("4. Salir de la cuenta");
+        //Comprueba si es admin, si lo es imprime su menu especial
         if (Usuarios.isAdmin()) {
             ImprimeMenuAdmin();
         }
         System.out.println("");
     }
+    //Imprime el menu principal pero con opciones especiales
     public static void ImprimeMenuAdmin() {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("5. Bloquear/Debloquear Usuarios");
         System.out.println("6. Actualizar lista de palabras Vetadas");
     }
+    //Imprime el submenu de ver peliculas
     public static void ImprimeMenuVerPeliculas(){
         System.out.println("1. Ver todas las peliculas");
         System.out.println("2. Buscar Pelicula");
@@ -26,10 +29,12 @@ public class Menus {
         }
         System.out.println("");
     }
+    //Imprime las opciones de administrador de ver peliculas
     public static void ImprimeVerPeliculasAdmin() {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("4. Administrar Peliculas");
     }
+    //Imprime el submenu para buscar pelicula
     public static void ImprimeMenuVerPeliculasBuscarPelicula(){
         System.out.println("1. Buscar por Nombre");
         System.out.println("2. Buscar por Autor");
@@ -39,28 +44,44 @@ public class Menus {
         System.out.println("");
 
     }
+    //Imprime la ficha de la pelicula seleccionada
     public static void ImprimeFichaPelicula(int index) {
         System.out.println("/////////////////");
         System.out.println("TITULO: " + RottenApp.Peliculas.get(index).getNombre());
         System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(index).getDuracion()));
         System.out.println("VALORACION: " +String.valueOf(RottenApp.Peliculas.get(index).getValoracion()) + "*");
-        System.out.println("GENERO: " + RottenApp.Peliculas.get(index).G());
+        System.out.println("GENERO: " + String.valueOf(RottenApp.Peliculas.get(index).getGenero()));
         System.out.println("/////////////////");
-        System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(index).getNombre());
-        ImprimeComentarios();
+        System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(index).getDescripcion());
+        ImprimeTresComentarios();
 
     }
-    public static void ImprimeComentarios() {
+    //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios
+    public static void ImprimeTresComentarios() {
         for (int i = 0; i < 3; i++) {
            System.out.println(Pelicula.InfoComentarios(i)); 
         }
+        ImprimeMenuComentarios();
+    }
+    public static void ImprimeMenuComentarios() {
         System.out.println("1. Ver todos los comentarios");
         System.out.println("2. Salir");
+        if (Usuarios.isAdmin()) {
+            ImprimeMenuComentariosAdmin();
+        }
     }
+    //Imprime las opciones extra de el menu de comentarios para administradores
+    public static void ImprimeMenuComentariosAdmin() {
+        System.out.println("////////ADMINISTRADOR////////");
+        System.out.println("3. Ver comentarios borrados");
+        System.out.println("4. Administarar comentarios");
+    }
+    //imprime todos los comentarips
     public static void TodosLosComentarios() {
         for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
             System.out.println(Pelicula.InfoComentarios(i));
         }
+        ImprimeMenuComentarios();
     }
 
 }
