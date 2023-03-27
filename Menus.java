@@ -10,6 +10,9 @@ public class Menus {
         //Comprueba si es admin, si lo es imprime su menu especial
         if (Usuarios.isAdmin()) {
             ImprimeMenuAdmin();
+            
+        }else{
+            SelectorMenu();
         }
         System.out.println("");
     }
@@ -18,6 +21,52 @@ public class Menus {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("5. Bloquear/Debloquear Usuarios");
         System.out.println("6. Actualizar lista de palabras Vetadas");
+    }
+    //Selector principal 
+    public static void SelectorMenu() {
+    switch (RottenApp.PideInt()) {
+        case 1:
+         // Lógica para crear una película
+            break;
+        case 2:
+         // Lógica para ver las películas
+            break;
+     case 3:
+         // Lógica para modificar la cuenta
+            break;
+        case 4:
+            // Lógica para salir de la cuenta
+        break;
+        default:
+            System.out.println("Opción inválida, elige otra vez.");
+         break;
+        }
+    }
+    //Selector para admin, esta separado para que un usuario normal no pueda acceder a las opciones de administrador
+    public static void SelectorMenuAdmin() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+             // Lógica para crear una película
+                break;
+            case 2:
+             // Lógica para ver las películas
+                break;
+            case 3:
+             // Lógica para modificar la cuenta
+                break;
+            case 4:
+                // Lógica para salir de la cuenta
+            break;
+            case 5:
+            //Lo k sea
+                break;
+            case 6:
+            //Movidas
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
     }
     //Imprime el submenu de ver peliculas
     public static void ImprimeMenuVerPeliculas(){
@@ -34,6 +83,36 @@ public class Menus {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("4. Administrar Peliculas");
     }
+    //Switch de VerPeliculas
+    public static void SelectorVerPelicula() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+             // Lógica para crear una película
+                break;
+            case 2:
+             // Lógica para ver las películas
+                break;
+            case 3:
+             // Lógica para modificar la cuenta
+                break;
+            }
+    }
+    public static void SelectorVarPeliculaAdmin() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+             // Lógica para crear una película
+                break;
+            case 2:
+             // Lógica para ver las películas
+                break;
+            case 3:
+             // Lógica para modificar la cuenta
+                break;
+            case 4:
+                // Lógica para salir de la cuenta
+            break;
+            }
+    }
     //Imprime el submenu para buscar pelicula
     public static void ImprimeMenuVerPeliculasBuscarPelicula(){
         System.out.println("1. Buscar por Nombre");
@@ -43,6 +122,26 @@ public class Menus {
         System.out.println("5. Salir");
         System.out.println("");
 
+    }
+    //Switch para buscar pelicula
+    public static void SelectorBuscarPelicula() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+             // Lógica para crear una película
+                break;
+            case 2:
+             // Lógica para ver las películas
+                break;
+            case 3:
+             // Lógica para modificar la cuenta
+                break;
+            case 4:
+                // Lógica para salir de la cuenta
+            break;
+            case 5:
+            //Lo k sea
+                break;
+            }
     }
     //Imprime la ficha de la pelicula seleccionada
     public static void ImprimeFichaPelicula(int index) {
@@ -75,6 +174,39 @@ public class Menus {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("3. Ver comentarios borrados");
         System.out.println("4. Administarar comentarios");
+    }
+    //Selector de comentarios
+    public static void SelectorMenuComentarios() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+             // Lógica para crear una película
+                break;
+            case 2:
+             // Lógica para ver las películas
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
+    }
+    public static void SelectorMenuComentariosAdmin() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+             // Lógica para crear una película
+                break;
+            case 2:
+             // Lógica para ver las películas
+                break;
+            case 3:
+             // Lógica para modificar la cuenta
+                break;
+            case 4:
+                // Lógica para salir de la cuenta
+            break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
     }
     //imprime todos los comentarips
     public static void TodosLosComentarios() {

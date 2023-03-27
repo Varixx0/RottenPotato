@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class RottenApp {
+    private static Scanner user = new Scanner (System.in);
     public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
     public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
@@ -22,7 +24,22 @@ public class RottenApp {
 
         
     }
-
+    //Scanners
+    public static String PideString() {
+        String cadena = user.nextLine(); 
+        return cadena; 
+    }
+    public static int PideInt() {
+        int x = user.nextInt(); 
+        user.nextLine(); 
+        return x;
+    }
+    public static double PideDouble() {
+        double x = user.nextDouble(); 
+        user.nextLine(); 
+        return x;
+    }
+    //Metodos principales
     public static void CrearPelicula(){
         
     }
