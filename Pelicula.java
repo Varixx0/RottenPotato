@@ -46,8 +46,8 @@ public class Pelicula {
     }
 
 
-    public void añadirPalabraVetada(String palabra){
-        this.PalabrasVetadas.add(palabra);
+    public static void añadirPalabraVetada(String palabra){
+        PalabrasVetadas.add(palabra);
     }
     
     public void añadirComentario(String comentario){
@@ -65,8 +65,19 @@ public class Pelicula {
        }
     }
 
-    public void añadirPelicula(String peli){
-        this.Peliculas.add(peli);
+    public static void añadirPelicula(String peli){
+        boolean esta = false;
+        for (int i = 0; i < Peliculas.size(); i++) {
+            if(Peliculas.get(i).equals(peli)){
+                esta = true;
+            }
+        }
+        if (esta) {
+            System.out.println("Esa pelicula ya ha sido añadida");
+        }
+        else{
+            Peliculas.add(peli);
+        }
     }
 
     
