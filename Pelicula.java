@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 
-/**
- * Pelicula
- */
+//Atributos
 public class Pelicula {
     private String nombre;
     private int duracion;
@@ -13,7 +11,7 @@ public class Pelicula {
     }
 
    
-    
+    //Constructor
     public Pelicula(String nombre,int duracion,double valoracion,genero Genero){
         this.nombre = nombre;
         this.duracion = duracion;
@@ -21,11 +19,12 @@ public class Pelicula {
         this.Tipo = Genero;
     }
 
-
+    //Arrays
     public ArrayList<String> Comentarios = new ArrayList<>();
     public static ArrayList<String> Peliculas = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
 
+    //Setters y getters
     public String getNombre() {
         return nombre;
     }
@@ -45,11 +44,12 @@ public class Pelicula {
         this.valoracion = valoracion;
     }
 
-
+    //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
     public static void añadirPalabraVetada(String palabra){
         PalabrasVetadas.add(palabra);
     }
-    
+
+    //Función que añade comentario a la pelicula que escoja el usuario 
     public void añadirComentario(String comentario){
        boolean esta = false;
        for (int i = 0; i < PalabrasVetadas.size(); i++) {
@@ -65,6 +65,7 @@ public class Pelicula {
        }
     }
 
+    //Función que añade titulos de peliculas al array para que no haya repetidas
     public static void añadirPelicula(String peli){
         boolean esta = false;
         for (int i = 0; i < Peliculas.size(); i++) {
@@ -80,7 +81,7 @@ public class Pelicula {
         }
     }
 
-    
+    //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
         if (valor < 0 || valor > 5) {
             System.out.println("Valor mal introducido");
