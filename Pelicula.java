@@ -100,4 +100,8 @@ public class Pelicula {
             this.valoracion = valor;
         }
     }
+    //Funcion para pasarle la informacion a la ficha en Ver Pelicula
+    public static String InfoComentarios(int indice) {
+        
+    }
 }

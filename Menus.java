@@ -47,5 +47,12 @@ public class Menus {
         System.out.println("GENERO: " + String.valueOf(Generos));
         System.out.println("/////////////////");
         System.out.println("DESCRIPCION: " + Descripcion);
+        ImprimeComentarios();
+
+    }
+    public static void ImprimeComentarios() {
+        for (int i = 0; i < 3; i++) {
+           System.out.println(Pelicula.InfoComentarios(i)); 
+        }
     }
 }
