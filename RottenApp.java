@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
 public class RottenApp {
-    private static ArrayList <Pelicula> Peliculas = new ArrayList<>();
-    private static ArrayList <Usuarios> Usuarios = new ArrayList<>();
+    public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
+    public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
+    public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
+
     public static void main(String[] args) {
         ContenidoInicial();
         
