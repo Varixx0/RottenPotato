@@ -20,4 +20,26 @@ public class Logs {
             CrearCuenta();
         }
     }
+    public static void LogInCuenta() {
+        System.out.println("Por favor introduce tu nombre de usuario: ");
+        String username = RottenApp.PideString(); 
+        //Lo hago asi en lugar de con un boolean porque de esta manera puedo devolver el id del usuario que trata de registrarse
+        if (Comprobacio.UsuarioExiste(username)!=-1) {
+            int idUsuario= Comprobacio.UsuarioExiste(username);
+            System.out.println("Por favor introduce la contraseña: ");
+            String Cont = RottenApp.PideString(); 
+            if (Comprobacio.ComparaConras(Cont, idUsuario)) {
+                System.out.println("Buenos dias " + RottenApp.Usuarios.get(idUsuario).getNombre()) ;
+                System.out.println("////////////////");
+                RottenApp.UserIdLogged=idUsuario;
+            } else {
+                System.out.println("Contraseña incorrecta");
+                LogInCuenta();
+            }
+
+        } else {
+            System.out.println("La cuenta a la que intentas acceder no existe");
+        }
+        
+    }
 }

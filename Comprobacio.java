@@ -40,17 +40,44 @@ public class Comprobacio {
     public static Boolean NombreRepetido(String Nombre) {
         boolean repetido = false; 
         for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
-            if (RottenApp.Usuarios.get(i).equals(Nombre)) {
+            if (RottenApp.Usuarios.get(i).getNombre().equals(Nombre)) {
                 repetido=true;
+                break; 
             }
         }
         return repetido;
     }
+    //Al crear la cuenta comprueba que las dos contraseñas coincidan, esto ayuda a evitar fallos ortograficos a la hora de leerlas
     public static boolean ContraCoincide(String Contra1, String Contra2) {
         if (Contra1.equals(Contra2)) {
             return true;
         } else {
             return false;
+        }
+    }
+    //Busca un usuario en la array usuarios para ver si existe, esta funcion es necesaria para el log in
+    public static int UsuarioExiste(String Username) {
+        boolean encontrado = false; 
+        int id=0; 
+        for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
+            if (RottenApp.Usuarios.get(i).getNombre().equals(Username)) {
+                encontrado=true;
+                id = i;
+                break;
+            }
+        }
+        if (encontrado) {
+            return id; 
+        } else {
+            return -1; 
+        }
+        
+    }
+    public static boolean ComparaConras(String Contra, int id) {
+        if (RottenApp.Usuarios.get(id).getContraseña().equals(Contra)) {
+            return true; 
+        } else {
+            return false; 
         }
     }
 }

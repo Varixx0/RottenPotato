@@ -8,6 +8,7 @@ public class RottenApp {
     public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
     public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
+    static int UserIdLogged; 
 
     public static void main(String[] args) {
         ContenidoInicial();
@@ -25,6 +26,13 @@ public class RottenApp {
 
         
     }
+    //Setter y Getter
+    public static int getUserIdLogged() {
+        return UserIdLogged;
+    }
+    public static void setUserIdLogged(int userIdLogged) {
+        UserIdLogged = userIdLogged;
+    }  
     //Scanners
     public static String PideString() {
         String cadena = user.nextLine(); 
