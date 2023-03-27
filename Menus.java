@@ -1,4 +1,4 @@
-
+import com.apple.eawt.event.RotationEvent;
 
 public class Menus {
     public static void ImprimeMenu() {
@@ -39,14 +39,14 @@ public class Menus {
         System.out.println("");
 
     }
-    public static void ImprimeFichaPelicula(String Nombre, int Tiempo, double Valoracion, Pelicula.genero Generos, String Descripcion) {
+    public static void ImprimeFichaPelicula(int index) {
         System.out.println("/////////////////");
-        System.out.println("TITULO: " + Nombre);
-        System.out.println("DURACION: " + String.valueOf(Tiempo) + " min");
-        System.out.println("VALORACION: " + String.valueOf(Valoracion) + "*");
-        System.out.println("GENERO: " + String.valueOf(Generos));
+        System.out.println("TITULO: " + RottenApp.Peliculas.get(index).getNombre());
+        System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(index).getDuracion()));
+        System.out.println("VALORACION: " +String.valueOf(RottenApp.Peliculas.get(index).getValoracion()) + "*");
+        System.out.println("GENERO: " + RottenApp.Peliculas.get(index).G());
         System.out.println("/////////////////");
-        System.out.println("DESCRIPCION: " + Descripcion);
+        System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(index).getNombre());
         ImprimeComentarios();
 
     }
@@ -54,5 +54,13 @@ public class Menus {
         for (int i = 0; i < 3; i++) {
            System.out.println(Pelicula.InfoComentarios(i)); 
         }
+        System.out.println("1. Ver todos los comentarios");
+        System.out.println("2. Salir");
     }
+    public static void TodosLosComentarios() {
+        for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
+            System.out.println(Pelicula.InfoComentarios(i));
+        }
+    }
+
 }

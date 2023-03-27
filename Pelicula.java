@@ -22,10 +22,8 @@ public class Pelicula {
     }
 
     //Arrays
-    public ArrayList<String> Comentarios = new ArrayList<>();
-    public static ArrayList<String> Peliculas = new ArrayList<>();
-    public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
-
+    public static ArrayList<String> Comentarios = new ArrayList<>();
+    
     //Setters y getters
     public String getNombre() {
         return nombre;
@@ -46,7 +44,7 @@ public class Pelicula {
         this.valoracion = valoracion;
     }
     
-    
+    //get
     public String getDescripcion() {
         return Descripcion;
     }
@@ -89,7 +87,6 @@ public class Pelicula {
             Peliculas.add(peli);
         }
     }
-
     
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
@@ -101,7 +98,7 @@ public class Pelicula {
         }
     }
     //Funcion para pasarle la informacion a la ficha en Ver Pelicula
-    public static String InfoComentarios(int indice) {
-        
+    public static String InfoComentarios(int indice) {  
+        return Comentarios.get(indice);
     }
 }
