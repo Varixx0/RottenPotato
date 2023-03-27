@@ -13,10 +13,10 @@ public class RottenApp {
         ContenidoInicial();
     }
     public static void ContenidoInicial() {
-        Usuarios.add(new Usuarios("Pepe","1234",true));
-        Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false));
-        Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true));
-        Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false));
+        Usuarios.add(new Usuarios("Pepe","1234",true, 0));
+        Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
+        Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
+        Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
         Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil, ""));
         Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,""));
         Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,""));
@@ -67,13 +67,11 @@ public class RottenApp {
         Pelicula.genero genero = PideGenero();
         System.out.println("Esccribe una descripción");
         String descrip = PideString();
-       if (Comprobacio.comprobarTodo(duracion, nombre, valoracion)) {
+       if (Comprobacio.comprobarTodoPelicula(duracion, nombre, valoracion)) {
         Peliculas.add(new Pelicula(nombre, duracion, valoracion, genero, descrip));
        }
        else{
         System.out.println("Has introducido valores incorrectos");
        }
-        
-
     }
 }

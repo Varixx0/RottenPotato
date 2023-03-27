@@ -1,15 +1,14 @@
 
 public class Comprobacio {
-    
-    public static boolean comprobarValoracion(double valor){
+    //Comprobaciones para la creacion de peliculas
+    public static boolean comprobarValoracionPelicula(double valor){
         boolean bien = false;
         if (valor >= 0 || valor <= 5) {
             bien = true;
         }
         return bien;
     }
-
-    public static boolean comprobarNombre(String nombre){
+    public static boolean comprobarNombrePelicula(String nombre){
         boolean bien = false;
         for (int i = 0; i < RottenApp.Peliculas.size(); i++) { 
             if (RottenApp.Peliculas.get(i).getNombre().equals(nombre)) {
@@ -22,21 +21,36 @@ public class Comprobacio {
         }
         return bien;
     }
-
-    public static boolean comprobarDuracion(int duracion){
+    public static boolean comprobarDuracionPelicula(int duracion){
         boolean bien = false;
         if (duracion >= 60) {
             bien = true;
         }
         return bien;
     }
-
-    public static boolean comprobarTodo(int duracion,String nombre,double valor){
+    public static boolean comprobarTodoPelicula(int duracion,String nombre,double valor){
         boolean bien = false;
-        if (comprobarDuracion(duracion) && comprobarNombre(nombre) &&comprobarValoracion(valor)){
+        if (comprobarDuracionPelicula(duracion) && comprobarNombrePelicula(nombre) &&comprobarValoracionPelicula(valor)){
             bien = true;
         }
         return bien;
     
+    }
+    //Comprobacion para la creacion de Usuarios
+    public static Boolean NombreRepetido(String Nombre) {
+        boolean repetido = false; 
+        for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
+            if (RottenApp.Usuarios.get(i).equals(Nombre)) {
+                repetido=true;
+            }
+        }
+        return repetido;
+    }
+    public static boolean ContraCoincide(String Contra1, String Contra2) {
+        if (Contra1.equals(Contra2)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

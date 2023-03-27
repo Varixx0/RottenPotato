@@ -2,16 +2,18 @@ public class Usuarios {
     private static String Nombre; 
     private static String Contraseña;
     private static boolean Admin;
+    private static int idCuenta;
 
     
 
     public Usuarios() {
     }
 
-    public Usuarios(String Nom , String Con , Boolean Ad) {
+    public Usuarios(String Nom , String Con , Boolean Ad, int id) {
         Nombre=Nom;
         Contraseña=Con;
         Admin=Ad;
+        idCuenta=id; 
     }
     public static String getNombre() {
         return Nombre;
