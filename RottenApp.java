@@ -11,7 +11,6 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-        PideGenero();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true));
@@ -68,5 +67,13 @@ public class RottenApp {
         Pelicula.genero genero = PideGenero();
         System.out.println("Esccribe una descripción");
         String descrip = PideString();
+       if (Comprobacio.comprobarTodo(duracion, nombre, valoracion)) {
+        Peliculas.add(new Pelicula(nombre, duracion, valoracion, genero, descrip));
+       }
+       else{
+        System.out.println("Has introducido valores incorrectos");
+       }
+        
+
     }
 }
