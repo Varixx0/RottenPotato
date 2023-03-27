@@ -6,7 +6,7 @@ public class Pelicula {
     private int duracion;
     private double valoracion;
     private genero Tipo;
-    public enum genero{
+    public  enum genero{
         terror,accion,romance,comedia,suspense,aventura,drama,animacion,infantil,policiaca,misterio,historico,familiar,seasonal;
     }
 
@@ -43,7 +43,7 @@ public class Pelicula {
     public void setValoracion(double valoracion) {
         this.valoracion = valoracion;
     }
-
+    
     //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
     public static void añadirPalabraVetada(String palabra){
         PalabrasVetadas.add(palabra);
@@ -81,6 +81,7 @@ public class Pelicula {
         }
     }
 
+    
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
         if (valor < 0 || valor > 5) {
