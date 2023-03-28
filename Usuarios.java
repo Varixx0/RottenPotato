@@ -10,10 +10,10 @@ public class Usuarios {
     }
 
     public Usuarios(String Nom , String Con , Boolean Ad, int id) {
-        this.Nombre=Nom;
-        this.Contraseña=Con;
-        this.Admin=Ad;
-        this.idCuenta=id;
+        Nombre=Nom;
+        Contraseña=Con;
+        Admin=Ad;
+        idCuenta=id; 
     }
     public String getNombre() {
         return this.Nombre;
