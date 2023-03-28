@@ -54,12 +54,14 @@ public class Logs {
         int seleccion = RottenApp.SeleccionaCuenta();
         System.out.println("¿Que nombre te gustaria poner?");
         String NuevoNom= RottenApp.PideString();
-        RottenApp.Usuarios.get(seleccion).setNombre(NuevoNom);
+        RottenApp.Usuarios.get(seleccion);
+        Usuarios.setNombre(NuevoNom);
     }
     public static void CambiarContra(){
         int seleccion = RottenApp.SeleccionaCuenta();
         System.out.println("Que contraseña te gustaria poner?");
         String Contra= RottenApp.PideString();
-        RottenApp.Usuarios.get(seleccion).setContraseña(Contra);
+        RottenApp.Usuarios.get(seleccion);
+        Usuarios.setContraseña(Contra);
     }
 }
