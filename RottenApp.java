@@ -55,6 +55,12 @@ public class RottenApp {
         return seleccion;
     }
 
+    public static void VerPeliculas(){
+        for (int index = 0; index < Peliculas.size(); index++) {
+            
+        }
+    }
+
     public static Pelicula.genero PideGenero() {
         Pelicula.genero[] generos = Pelicula.genero.values();
         System.out.println("Selecciona un género:");

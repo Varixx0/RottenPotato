@@ -74,22 +74,17 @@ public class Pelicula {
         Comentarios.add(comentario);
        }
     }
-
-    //Función que añade titulos de peliculas al array para que no haya repetidas
-    /*public static void añadirPelicula( peli){
-        boolean esta = false;
-        for (int i = 0; i < RottenApp.Peliculas.size(); i++) {
-            if(RottenApp.Peliculas.equals()){
-                esta = true;
+    
+    public void VerUltimComentarios(){
+        if (RottenApp.Peliculas.size() > 0){
+            for (int i = 0; i< 3; i++) {
+                for (int j = 0; j < 3 ;j++) {
+                    RottenApp.Peliculas.get(i).Comentarios.get(j);
+                }
             }
         }
-        if (esta) {
-            System.out.println("Esa pelicula ya ha sido añadida");
-        }
-        else{
-            RottenApp.Peliculas.add(peli);
-        }
-    }*/
+    }
+
     
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
