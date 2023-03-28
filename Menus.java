@@ -232,41 +232,60 @@ public class Menus {
     public static void SelectorMenuComentarios() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                TodosLosComentarios();
                 break;
             case 2:
-             // Lógica para ver las películas
+                SelectorMenu();
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
              break;
             }
     }
+    public static void ImprimeMenuAdministrarcomentarios(){
+        System.out.println("////////ADMINISTRADOR////////");
+        System.out.println("1.- Autorizar Comentarios");
+        System.out.println("2.- Borrar Comentarios");
+        System.out.println("3.- Modificar comentarios <Provisional>");
+    }
+    public static void SelectorMenuAdministarComentarios(){
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Pelicula.AutorizarComentarios();
+                break;
+        
+            case 2:
+                Pelicula.BorrarComentario();
+            default:
+                break;
+        }
+    }
     public static void SelectorMenuComentariosAdmin() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                TodosLosComentarios();
                 break;
             case 2:
-             // Lógica para ver las películas
+                SelectorMenu();
                 break;
             case 3:
-             // Lógica para modificar la cuenta
+                VerComentariosBorrados();
                 break;
             case 4:
-                // Lógica para salir de la cuenta
+                
             break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
              break;
             }
+        
     }
     public static void VerComentariosBorrados(){
         for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
             System.out.println(RottenApp.ComentariosBorrados.get(i));
         }
     }
-    //imprime todos los comentarips
+    //imprime todos los comentarios
     public static void TodosLosComentarios() {
         for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
             System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
@@ -276,7 +295,7 @@ public class Menus {
     //Menu administrador de cuentas
     public static void MenuAdministrarCuentas() {
         System.out.println("////////ADMINISTRADOR////////");
-        System.out.println("1. Eliminar cuenta");
+        System.out.println("1.- Eliminar cuenta");
         System.out.println("2. Cambiar nombre");
         System.out.println("3. Cambiar Contraseña");
         SelectorMenuAdministrarCuentas();

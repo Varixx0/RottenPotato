@@ -14,7 +14,11 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-        Menus.ImprimeMenu();
+        Pelicula.añadirComentario("Esta película tiene un Nazi");
+        
+        
+        //Menus.ImprimeMenu();
+        
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -27,12 +31,10 @@ public class RottenApp {
         Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"Duncan","",3));
         Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Rua","",4));
         Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Sergio","",5));
-        PalabrasVetadas.add("Malo");
         PalabrasVetadas.add("Bueno");
-        PalabrasVetadas.add("Nazi");
+        PalabrasVetadas.add("nazi");
         PalabrasVetadas.add("Duncan");
         PalabrasVetadas.add("Sergi");
-        
     }
     //Setter y Getter
     public static int getUserIdLogged() {
