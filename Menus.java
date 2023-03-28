@@ -15,10 +15,25 @@ public class Menus {
             case 2:
                 Logs.LogInCuenta();
                 break;
+            case 42:
             default:
-                System.out.println("Opción inválida, elige otra vez.");
+                EasterEgg();
              break;
             }
+    }
+    public static void EasterEgg(){
+        System.out.println("                                   ''~``");
+        System.out.println("                                  ( o o )");
+        System.out.println("  +--------------------------.oooO--(_)--Oooo.--------------------------+");
+        System.out.println("  |                                                                     |");
+        System.out.println("  |                          VARIXX & SEMPAI N                          |");
+        System.out.println("  |                                                                     |");
+        System.out.println("  |                            .oooO                                    |");
+        System.out.println("  |                            (   )   Oooo.                            |");
+        System.out.println("  +-----------------------------) (----(   )----------------------------+");
+        System.out.println("                                (  )    ) /");
+        System.out.println("                                        (_/");
+        Menus.MenuLogIn();
     }
     //Imprime el menu principal
     public static void ImprimeMenu() {
@@ -53,7 +68,7 @@ public class Menus {
             ImprimeMenuVerPeliculas();
             break;
      case 3:
-            SelectorMenuModificarCuenta();
+            MenuModificarCuenta();
             break;
         case 4:
             Logs.LogOut();

@@ -62,6 +62,7 @@ public class Logs {
         System.out.println("¿Que nombre te gustaria poner?");
         String NuevoNom= RottenApp.PideString();
         RottenApp.Usuarios.get(seleccion).setNombre(NuevoNom);
+        Menus.ImprimeMenu();
     }
     public static void CambiarContra(){
         int seleccion;
@@ -81,6 +82,7 @@ public class Logs {
         }else{
             System.out.println("La contraseña que has introducido es incorrecta");
         }
+        Menus.ImprimeMenu();
     }
     public static void LogOut() {
         System.out.println("Gracias por usar nuestra aplicacion");

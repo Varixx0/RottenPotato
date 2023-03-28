@@ -9,7 +9,7 @@ public class RottenApp {
     public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
     public static ArrayList<String> ComentariosBorrados = new ArrayList<>();
-    static int UserIdLogged = 0; 
+    static int UserIdLogged = 1; 
     static int idPeliculaSelect  = 0 ;
 
     public static void main(String[] args) {
