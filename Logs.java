@@ -49,6 +49,7 @@ public class Logs {
     public static void EliminarCuentas() {
         int seleccion=RottenApp.SeleccionaCuenta();
         RottenApp.Usuarios.remove(seleccion);
+        Menus.ImprimeMenu();
     }
     //Opcion de admin, adaptable al publico general, quitar seleccion cuenta
     public static void CambiarNombre(){

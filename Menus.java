@@ -73,7 +73,11 @@ public class Menus {
                 ImprimeMenuVerPeliculas();
                 break;
             case 3:
-                SelectorMenuAdministrarCuentas();
+               if (RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
+                    MenuAdministrarCuentas();
+               } else {
+                    MenuModificarCuenta();
+               }
                 break;
             case 4:
                 Logs.LogOut();
@@ -359,7 +363,15 @@ public class Menus {
                 System.out.println("Opción inválida, elige otra vez.");
              break;
             }
-    }public static void SelectorMenuModificarCuenta() {
+    
+    }
+    public static void MenuModificarCuenta() {
+        System.out.println("1. Cambiar nombre");
+        System.out.println("2. Cambiar Contraseña");
+        System.out.println("3. Salir");
+        SelectorMenuModificarCuenta();
+    }
+    public static void SelectorMenuModificarCuenta() {
         switch (RottenApp.PideInt()) {
             case 1:
                 Logs.CambiarNombre();
@@ -367,6 +379,8 @@ public class Menus {
             case 2:
                 Logs.CambiarContra();
                 break;
+            case 3: 
+                ImprimeMenu();
             default:
                 System.out.println("Opción inválida, elige otra vez.");
              break;
