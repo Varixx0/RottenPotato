@@ -8,12 +8,15 @@ public class RottenApp {
     public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
     public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
+    public static ArrayList<String> ComentariosBorrados = new ArrayList<>();
     static int UserIdLogged = 0; 
     static int idPeliculaSelect  = 0 ;
 
     public static void main(String[] args) {
         ContenidoInicial();
-        Menus.ImprimeMenu();
+        //Menus.ImprimeMenu();
+        Pelicula.añadirComentario("Duncan");
+        Menus.VerComentariosBorrados();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -147,7 +150,7 @@ public class RottenApp {
         System.out.println("Elige el id la pelicula que deseas seleccionar: ");
         int id = PideInt(); 
         idPeliculaSelect = id; 
-        Menus.ImprimeFichaPelicula();
+        Menus.ImprimeFichaPelicula(id);
     }
     public static void AñadirComentario(){
         SeleccionarPelicula();

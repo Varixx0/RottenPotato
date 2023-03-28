@@ -110,6 +110,7 @@ public class Pelicula {
        }
        if (esta) {
         System.out.println("Has usado una palabra vetada");
+        RottenApp.ComentariosBorrados.add(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre() + ": " + comentario);
        }
        else{
         Comentarios.add( RottenApp.Usuarios.get(RottenApp.UserIdLogged).getNombre() + ": " + comentario);
@@ -117,6 +118,7 @@ public class Pelicula {
     }
     
 
+    
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
         if (valor < 0 || valor > 5) {
