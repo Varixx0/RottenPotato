@@ -1,3 +1,4 @@
+import java.net.SocketTimeoutException;
 
 public class Menus {
     //Imprime el menu principal
@@ -21,6 +22,7 @@ public class Menus {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("5. Bloquear/Debloquear Usuarios");
         System.out.println("6. Actualizar lista de palabras Vetadas");
+        SelectorMenuAdmin();
     }
     //Selector principal 
     public static void SelectorMenu() {
@@ -75,6 +77,8 @@ public class Menus {
         System.out.println("3. Salir");
         if (Usuarios.isAdmin()) {
             ImprimeVerPeliculasAdmin();
+        }else{
+            SelectorVerPelicula();
         }
         System.out.println("");
     }
@@ -82,6 +86,7 @@ public class Menus {
     public static void ImprimeVerPeliculasAdmin() {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("4. Administrar Peliculas");
+        SelectorVarPeliculaAdmin();
     }
     //Switch de VerPeliculas
     public static void SelectorVerPelicula() {
@@ -121,7 +126,7 @@ public class Menus {
         System.out.println("4. Buscar por Valoracion");
         System.out.println("5. Salir");
         System.out.println("");
-
+        SelectorBuscarPelicula();
     }
     //Switch para buscar pelicula
     public static void SelectorBuscarPelicula() {
@@ -167,6 +172,8 @@ public class Menus {
         System.out.println("2. Salir");
         if (Usuarios.isAdmin()) {
             ImprimeMenuComentariosAdmin();
+        }else{
+            SelectorMenuComentarios();
         }
     }
     //Imprime las opciones extra de el menu de comentarios para administradores
@@ -174,6 +181,7 @@ public class Menus {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("3. Ver comentarios borrados");
         System.out.println("4. Administarar comentarios");
+        SelectorMenuComentariosAdmin();
     }
     //Selector de comentarios
     public static void SelectorMenuComentarios() {
@@ -217,9 +225,27 @@ public class Menus {
     }
     //Menu administrador de cuentas
     public static void MenuAdministrarCuentas() {
-        //Eliminar cuenta
-        //Cambiar nombre
-        //Cambiar contrasña
+        System.out.println("////////ADMINISTRADOR////////");
+        System.out.println("1. Eliminar cuenta");
+        System.out.println("2. Cambiar nombre");
+        System.out.println("3. Cambiar Contraseña");
+        SelectorMenuAdministrarCuentas();
+    }
+    public static void SelectorMenuAdministrarCuentas() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Logs.EliminarCuentas();
+                break;
+            case 2:
+                Logs.CambiarNombre();
+                break;
+            case 3:
+                Logs.CambiarContra();
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
     }
     //Imprime el de una cuenta a partir de su indice. Ademas le da un numero para que sea seleccionable
     public static void VerCuenta(int id) {
