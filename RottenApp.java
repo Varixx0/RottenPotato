@@ -12,6 +12,7 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
+        AñadirComentario();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -23,7 +24,11 @@ public class RottenApp {
         Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,""));
         Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,""));
         Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,""));
-
+        PalabrasVetadas.add("Malo");
+        PalabrasVetadas.add("Bueno");
+        PalabrasVetadas.add("Nazi");
+        PalabrasVetadas.add("Duncan");
+        PalabrasVetadas.add("Sergi");
         
     }
     //Setter y Getter
@@ -55,10 +60,10 @@ public class RottenApp {
         return seleccion;
     }
 
-    public static void VerPeliculas(){
-        for (int index = 0; index < Peliculas.size(); index++) {
-            
-        }
+    public static int SeleccionarPelicula() {
+        Menus.VerPeliculas();
+        int seleccion = PideInt();
+        return seleccion;
     }
 
     public static Pelicula.genero PideGenero() {
@@ -93,5 +98,12 @@ public class RottenApp {
        else{
         System.out.println("Has introducido valores incorrectos");
        }
+    }
+
+    public static void AñadirComentario(){
+        SeleccionarPelicula();
+        System.out.println("Escribe tu comentario");
+        String comentario = user.nextLine();
+        Pelicula.añadirComentario(comentario);
     }
 }
