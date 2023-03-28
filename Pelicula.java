@@ -55,8 +55,33 @@ public class Pelicula {
         Descripcion = descripcion;
     }
     //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
-    public static void añadirPalabraVetada(String palabra){
-        RottenApp.PalabrasVetadas.add(palabra);
+    public static void añadirPalabraVetada(){
+        boolean esta = false;
+        String palabra = RottenApp.PideString();
+        System.out.println("Dime la palabra vetada");
+        for (int i = 0; i <RottenApp.PalabrasVetadas.size(); i++) {
+            if (RottenApp.PalabrasVetadas.get(i).toLowerCase().equals(palabra.toLowerCase())) {
+                esta = true;
+            }
+        }
+        if(esta){
+            System.out.println("Esa palabra ya existe");
+        }
+        else{
+            RottenApp.PalabrasVetadas.add(palabra);
+        } 
+    }
+
+    public static void BorrarPalabrasVetadas(){
+        Menus.VerPalabrasVetadas();
+        System.out.println("Elige la palabra vetada");
+        int posiPalabra = RottenApp.PideInt();
+        if (RottenApp.PalabrasVetadas.get(posiPalabra).isEmpty()) {
+            System.out.println("Esa palabra no existe");
+        }
+        else{
+            RottenApp.PalabrasVetadas.remove(posiPalabra);
+        }
     }
 
     //Función que añade comentario a la pelicula que escoja el usuario 

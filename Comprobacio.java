@@ -1,6 +1,6 @@
 
 public class Comprobacio {
-    //Comprobaciones para la creacion de peliculas
+    //Comprobacio para la creacion de peliculas
     public static boolean comprobarValoracionPelicula(double valor){
         boolean bien = false;
         if (valor >= 0 || valor <= 5) {

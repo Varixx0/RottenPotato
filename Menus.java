@@ -47,16 +47,16 @@ public class Menus {
     public static void SelectorMenu() {
     switch (RottenApp.PideInt()) {
         case 1:
-            RottenApp.CrearPelicula();
+         // Lógica para crear una película
             break;
         case 2:
-            VerPeliculas();
+         // Lógica para ver las películas
             break;
-        case 3:
-            MenuModCuentas();
+     case 3:
+         // Lógica para modificar la cuenta
             break;
         case 4:
-            Logs.LogOut();
+            // Lógica para salir de la cuenta
         break;
         default:
             System.out.println("Opción inválida, elige otra vez.");
@@ -67,28 +67,54 @@ public class Menus {
     public static void SelectorMenuAdmin() {
         switch (RottenApp.PideInt()) {
             case 1:
-                RottenApp.CrearPelicula();
+             // Lógica para crear una película
                 break;
             case 2:
-                VerPeliculas();
+             // Lógica para ver las películas
                 break;
             case 3:
-                MenuModCuentas();
+             // Lógica para modificar la cuenta
                 break;
             case 4:
-                Logs.LogOut();
+                // Lógica para salir de la cuenta
             break;
             case 5:
-
+                //Bloq Desbloq
                 break;
             case 6:
-                
+                MenuPalabrasVetadas();
                 break;
+            
             default:
                 System.out.println("Opción inválida, elige otra vez.");
              break;
             }
     }
+    public static void ImprimeMenuPalabrasVetadas(){
+        System.out.println("////////ADMINISTRADOR////////");
+        System.out.println("1.- Ver palabras vetadas");
+        System.out.println("2.- Añadir palabras vetadas");
+        System.out.println("3.- Borrar palabra vetada");
+        System.out.println("4. Salir");
+        MenuPalabrasVetadas();
+    }
+    public static void MenuPalabrasVetadas(){
+
+        switch (RottenApp.PideInt()) {
+            case 1:
+                VerPalabrasVetadas();
+                break;
+            case 2:
+                Pelicula.añadirPalabraVetada();
+            case 3:
+                Pelicula.BorrarPalabrasVetadas();
+            case 4:
+                ImprimeMenu();
+            default:
+                break;
+        }
+    }
+
     //Imprime el submenu de ver peliculas
     public static void ImprimeMenuVerPeliculas(){
         System.out.println("1. Ver todas las peliculas");
@@ -241,28 +267,6 @@ public class Menus {
             System.out.println(Pelicula.InfoComentarios(i));
         }
         ImprimeMenuComentarios();
-    }
-    //Menu modificar cuentas
-    public static void MenuModCuentas(){
-        System.out.println("1. Cambiar nombre de la cuenta");
-        System.out.println("2. Cambiar contraseña");
-        System.out.println("3. Salir");
-    }
-    public static void SelectorMenuModCuentas(){
-        switch (RottenApp.PideInt()) {
-            case 1:
-                Logs.CambiarNombre();
-                break;
-            case 2:
-            Logs.CambiarContra();
-                break;
-            case 3:
-                //Salir
-                break;
-            default:
-                System.out.println("Opción inválida, elige otra vez.");
-             break;
-            }
     }
     //Menu administrador de cuentas
     public static void MenuAdministrarCuentas() {
