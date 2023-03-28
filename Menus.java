@@ -47,13 +47,13 @@ public class Menus {
     public static void SelectorMenu() {
     switch (RottenApp.PideInt()) {
         case 1:
-         // Lógica para crear una película
+            RottenApp.CrearPelicula();
             break;
         case 2:
-         // Lógica para ver las películas
+            VerPeliculas();
             break;
      case 3:
-         // Lógica para modificar la cuenta
+            SelectorMenuModificarCuenta();
             break;
         case 4:
             // Lógica para salir de la cuenta
@@ -67,13 +67,13 @@ public class Menus {
     public static void SelectorMenuAdmin() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                RottenApp.CrearPelicula();
                 break;
             case 2:
-             // Lógica para ver las películas
+                VerPeliculas();
                 break;
             case 3:
-             // Lógica para modificar la cuenta
+                SelectorMenuAdministrarCuentas();
                 break;
             case 4:
                 // Lógica para salir de la cuenta
@@ -300,6 +300,7 @@ public class Menus {
         System.out.println("3. Desbloquear cuentas");
         System.out.println("4. Salir");
     }
+
     public static void SelectorMenuAdminBloqDesbloq() {
         switch (RottenApp.PideInt()) {
             case 1:
@@ -309,6 +310,18 @@ public class Menus {
                 Logs.CambiarNombre();
                 break;
             case 3:
+                Logs.CambiarContra();
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
+    }public static void SelectorMenuModificarCuenta() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Logs.CambiarNombre();
+                break;
+            case 2:
                 Logs.CambiarContra();
                 break;
             default:
