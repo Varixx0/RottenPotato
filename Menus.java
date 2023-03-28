@@ -232,7 +232,7 @@ public class Menus {
     public static void SelectorMenuComentarios() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                Pelicula
                 break;
             case 2:
              // Lógica para ver las películas
@@ -304,13 +304,16 @@ public class Menus {
     public static void SelectorMenuAdminBloqDesbloq() {
         switch (RottenApp.PideInt()) {
             case 1:
-                Logs.EliminarCuentas();
+                Logs.VerBloqueados();
                 break;
             case 2:
-                Logs.CambiarNombre();
+                Logs.BloquearUsuario();
                 break;
             case 3:
-                Logs.CambiarContra();
+                Logs.DesbloquearUsuario();
+                break;
+            case 4:
+                ImprimeMenu();
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
