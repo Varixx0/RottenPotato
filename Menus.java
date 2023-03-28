@@ -251,6 +251,17 @@ public class Menus {
     public static void VerCuenta(int id) {
         System.out.println(id + ". " + RottenApp.Usuarios.get(id).getNombre());
     }
+    public static void VerPeliculas(){
+        for (int index = 0; index < RottenApp.Peliculas.size(); index++) {
+            System.out.println( (index+1) +" "+RottenApp.Peliculas.get(index).getNombre());
+        }
+    }
+
+    public static void VerPalabrasVetadas(){
+        for (int i = 0; i < RottenApp.PalabrasVetadas.size() ; i++) {
+            System.out.println(RottenApp.PalabrasVetadas.get(i));
+        }
+    }
     public static void ListarCuentas() {
         for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
             VerCuenta(i);
