@@ -69,9 +69,19 @@ public class Pelicula {
         }
         else{
             RottenApp.PalabrasVetadas.add(palabra);
+        } 
+    }
+
+    public static void BorrarPalabrasVetadas(){
+        Menus.VerPalabrasVetadas();
+        System.out.println("Elige la palabra vetada");
+        int posiPalabra = RottenApp.PideInt();
+        if (RottenApp.PalabrasVetadas.get(posiPalabra).isEmpty()) {
+            System.out.println("Esa palabra no existe");
         }
-        
-        
+        else{
+            RottenApp.PalabrasVetadas.remove(posiPalabra);
+        }
     }
 
     //Función que añade comentario a la pelicula que escoja el usuario 
