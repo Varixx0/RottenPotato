@@ -1,8 +1,8 @@
 public class Usuarios {
-    private static String Nombre; 
-    private static String Contraseña;
-    private static boolean Admin;
-    private static int idCuenta;
+    private String Nombre; 
+    private String Contraseña;
+    private boolean Admin;
+    private int idCuenta;
 
     
 
@@ -10,27 +10,27 @@ public class Usuarios {
     }
 
     public Usuarios(String Nom , String Con , Boolean Ad, int id) {
-        Nombre=Nom;
-        Contraseña=Con;
-        Admin=Ad;
-        idCuenta=id; 
+        this.Nombre=Nom;
+        this.Contraseña=Con;
+        this.Admin=Ad;
+        this.idCuenta=id; 
     }
     public String getNombre() {
         return this.Nombre;
     }
-    public static void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setNombre(String nombre) {
+            Nombre = nombre;
     }
-    public static String getContraseña() {
+    public String getContraseña() {
         return Contraseña;
     }
-    public static void setContraseña(String contraseña) {
+    public void setContraseña(String contraseña) {
         Contraseña = contraseña;
     }
-    public static boolean isAdmin() {
+    public boolean isAdmin() {
         return Admin;
     }
-    public static void setAdmin(boolean admin) {
+    public void setAdmin(boolean admin) {
         Admin = admin;
     } 
 

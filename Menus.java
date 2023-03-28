@@ -29,7 +29,7 @@ public class Menus {
         System.out.println("3. Modificar Cuenta");
         System.out.println("4. Salir de la cuenta");
         //Comprueba si es admin, si lo es imprime su menu especial
-        if (Usuarios.isAdmin()) {
+        if (RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
             ImprimeMenuAdmin();
             
         }else{
@@ -95,7 +95,7 @@ public class Menus {
         System.out.println("1. Ver todas las peliculas");
         System.out.println("2. Buscar Pelicula");
         System.out.println("3. Salir");
-        if (Usuarios.isAdmin()) {
+        if (RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
             ImprimeVerPeliculasAdmin();
         }else{
             SelectorVerPelicula();
@@ -190,7 +190,7 @@ public class Menus {
     public static void ImprimeMenuComentarios() {
         System.out.println("1. Ver todos los comentarios");
         System.out.println("2. Salir");
-        if (Usuarios.isAdmin()) {
+        if(RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
             ImprimeMenuComentariosAdmin();
         }else{
             SelectorMenuComentarios();
