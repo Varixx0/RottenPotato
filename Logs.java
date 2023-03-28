@@ -90,13 +90,16 @@ public class Logs {
     public static void BloquearUsuario(){
         int seleccion = RottenApp.SeleccionaCuenta();
         RottenApp.Usuarios.get(seleccion).setBloquedo(true);
+        Menus.ImprimeMenu();
     }
     //Desbloquear usuaruis
     public static void DesbloquearUsuario() {
         VerBloqueados();
         //Selecciona la id de la cuenta que quieras bloquear
+        System.out.println("Selecciona el id que desea desbloquear");
         int seleccion = RottenApp.PideInt();
         RottenApp.Usuarios.get(seleccion).setBloquedo(false);
+        Menus.ImprimeMenu();
     }
     //Ver usuarios bloqueados
     public static void VerBloqueados(){

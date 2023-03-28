@@ -13,14 +13,7 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-<<<<<<< HEAD
-        Menus.MenuLogIn(); 
-       
-=======
         Menus.ImprimeMenu();
-       //Peliculas.get(idPeliculaSelect).añadirComentario("Hola");
-      // Menus.TodosLosComentarios();
->>>>>>> 9f51b8da104b29cf8b6d4b2e7fbaab10242c25f3
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));

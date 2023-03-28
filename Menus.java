@@ -50,7 +50,7 @@ public class Menus {
             RottenApp.CrearPelicula();
             break;
         case 2:
-            VerPeliculas();
+            ImprimeMenuVerPeliculas();
             break;
      case 3:
             SelectorMenuModificarCuenta();
@@ -299,19 +299,22 @@ public class Menus {
         System.out.println("2. Bloquear cuentas");
         System.out.println("3. Desbloquear cuentas");
         System.out.println("4. Salir");
+        SelectorMenuAdminBloqDesbloq();
     }
 
     public static void SelectorMenuAdminBloqDesbloq() {
         switch (RottenApp.PideInt()) {
             case 1:
-                Logs.EliminarCuentas();
+                Logs.VerBloqueados();
                 break;
             case 2:
-                Logs.CambiarNombre();
+                Logs.BloquearUsuario();
                 break;
             case 3:
-                Logs.CambiarContra();
+                Logs.DesbloquearUsuario();
                 break;
+            case 4:
+                ImprimeMenu();
             default:
                 System.out.println("Opción inválida, elige otra vez.");
              break;
