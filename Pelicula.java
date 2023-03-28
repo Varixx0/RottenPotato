@@ -118,6 +118,7 @@ public class Pelicula {
        else{
         Comentarios.add( RottenApp.Usuarios.get(RottenApp.UserIdLogged).getNombre() + ": " + comentario);
        }
+       Menus.ImprimeMenu();
     }
     
 

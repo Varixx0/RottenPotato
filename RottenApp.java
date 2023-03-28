@@ -143,10 +143,17 @@ public class RottenApp {
         }
         SeleccionaPeliculaPorId();
     }
+    //Habria que hacer algo con esto, WTF JHON?
     public static void SeleccionaPeliculaPorId() {
         System.out.println("Elige el id la pelicula que deseas seleccionar: ");
         int id = PideInt(); 
         idPeliculaSelect = id; 
+        Menus.ImprimeFichaPelicula();
+    }
+    public static void SeleccionarPeliculaPorIndice() {
+        System.out.println("Elige la pelicula que deseas seleccionar: ");
+        int id = PideInt(); 
+        idPeliculaSelect = id-1; 
         Menus.ImprimeFichaPelicula();
     }
     public static void AñadirComentario(){

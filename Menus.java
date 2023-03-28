@@ -138,6 +138,7 @@ public class Menus {
         switch (RottenApp.PideInt()) {
             case 1:
                 VerPeliculas();
+                RottenApp.SeleccionarPeliculaPorIndice();
                 break;
             case 2:
                 ImprimeMenuVerPeliculasBuscarPelicula();
@@ -151,6 +152,7 @@ public class Menus {
         switch (RottenApp.PideInt()) {
             case 1:
                 VerPeliculas();
+                RottenApp.SeleccionarPeliculaPorIndice();
                 break;
             case 2:
                  ImprimeMenuVerPeliculasBuscarPelicula();
@@ -214,7 +216,8 @@ public class Menus {
     }
     public static void ImprimeMenuComentarios() {
         System.out.println("1. Ver todos los comentarios");
-        System.out.println("2. Salir");
+        System.out.println("2. Comentar");
+        System.out.println("3. Salir");
         if(RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
             ImprimeMenuComentariosAdmin();
         }else{
@@ -224,8 +227,8 @@ public class Menus {
     //Imprime las opciones extra de el menu de comentarios para administradores
     public static void ImprimeMenuComentariosAdmin() {
         System.out.println("////////ADMINISTRADOR////////");
-        System.out.println("3. Ver comentarios borrados");
-        System.out.println("4. Administarar comentarios");
+        System.out.println("4. Ver comentarios borrados");
+        System.out.println("5. Administarar comentarios");
         SelectorMenuComentariosAdmin();
     }
     //Selector de comentarios
@@ -235,12 +238,20 @@ public class Menus {
                 TodosLosComentarios();
                 break;
             case 2:
-                SelectorMenu();
+                ImprimeMenuComentar();
+                break;
+            case 3:
+                //Salir
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
              break;
             }
+    }
+    public static void ImprimeMenuComentar() {
+        System.out.println("Introduce el comentario que quieras poner: ");
+        String Comentario = RottenApp.PideString();
+        RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).añadirComentario(Comentario);
     }
     public static void ImprimeMenuAdministrarcomentarios(){
         System.out.println("////////ADMINISTRADOR////////");
@@ -267,13 +278,16 @@ public class Menus {
                 TodosLosComentarios();
                 break;
             case 2:
-                SelectorMenu();
+                ImprimeMenuComentar();
                 break;
             case 3:
+                ImprimeMenuComentarios();
+                break;    
+            case 4:
                 VerComentariosBorrados();
                 break;
-            case 4:
-                
+            case 5:
+                ImprimeMenuAdministrarcomentarios();
             break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
