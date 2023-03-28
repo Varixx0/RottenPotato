@@ -68,9 +68,9 @@ public class Pelicula {
     public static void añadirPalabraVetada(){
         boolean esta = false;
         System.out.println("Dime la palabra vetada");
-        String palabra = RottenApp.PideString();
+        String palabra = RottenApp.PideString().toLowerCase();
         for (int i = 0; i <RottenApp.PalabrasVetadas.size(); i++) {
-            if (RottenApp.PalabrasVetadas.get(i).toLowerCase().equals(palabra.toLowerCase())) {
+            if (RottenApp.PalabrasVetadas.get(i).toLowerCase().equals(palabra)) {
                 esta = true;
             }
         }
@@ -78,7 +78,7 @@ public class Pelicula {
             System.out.println("Esa palabra ya existe");
         }
         else{
-            RottenApp.PalabrasVetadas.add(palabra.toLowerCase());
+            RottenApp.PalabrasVetadas.add(palabra);
         } 
     }
     public void setAutor(String Autr){
@@ -106,7 +106,7 @@ public class Pelicula {
         boolean esta = false;
         for (int i = 0; i < palabras.length; i++) {
             String palabra = palabras[i].toLowerCase();
-            if (RottenApp.PalabrasVetadas.contains(palabra.toLowerCase())) {
+            if (RottenApp.PalabrasVetadas.contains(palabra)) {
                 esta = true;
             }
         }
@@ -133,5 +133,23 @@ public class Pelicula {
     //Funcion para pasarle la informacion a la ficha en Ver Pelicula
     public static String InfoComentarios(int indice) {  
         return Comentarios.get(indice);
+    }
+
+    public static void AutorizarComentarios(){
+        for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
+            System.out.println((i+1 ) + " " + RottenApp.ComentariosBorrados.get(i) );
+            ;
+        }
+        System.out.println("Selecciona un comentario");
+        int seleccion = RottenApp.PideInt() -1;
+        //int posiPelicula = RottenApp.PalabrasVetadas.get(seleccion).indexOf(':'); idea para hacerlo más óptimo
+        System.out.println("Selecciona la película donde quieres guardar el comentario");
+        for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
+            System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
+        }
+        int pelicula = RottenApp.PideInt() - 1;
+        RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion));
+        RottenApp.ComentariosBorrados.remove(seleccion);
+
     }
 }
