@@ -2,6 +2,7 @@ import java.util.ArrayList;
 //Push
 //Atributos
 public class Pelicula {
+    
     private String nombre;
     private int duracion;
     private double valoracion;
@@ -132,7 +133,12 @@ public class Pelicula {
     }
     //Funcion para pasarle la informacion a la ficha en Ver Pelicula
     public static String InfoComentarios(int indice) {  
-        return Comentarios.get(indice);
+        if (RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.isEmpty()) {
+            return ("No hay comentarios");
+        }
+        else{
+            return Comentarios.get(indice);
+        }
     }
 
     public static void AutorizarComentarios(){

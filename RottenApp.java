@@ -14,23 +14,19 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-        Pelicula.añadirComentario("Esta película tiene un Nazi");
-        
-        
-        //Menus.ImprimeMenu();
-        
+        Menus.ImprimeMenu();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
         Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
         Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
         Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
-        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"", "",0));
-        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"","",1));
-        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"Tarantino","",2));
-        Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"Duncan","",3));
-        Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Rua","",4));
-        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Sergio","",5));
+        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"autor", "pelicula",0));
+        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"autor","pelicula",1));
+        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"Tarantino","pelicula tarantido",2));
+        Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"Duncan","sergi",3));
+        Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Rua","valiente",4));
+        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Sergio","falopero",5));
         PalabrasVetadas.add("Bueno");
         PalabrasVetadas.add("nazi");
         PalabrasVetadas.add("Duncan");
@@ -105,6 +101,7 @@ public class RottenApp {
        else{
         System.out.println("Has introducido valores incorrectos");
        }
+       Menus.ImprimeMenu();
     }
     public static void BuscarPeliculaTitulo() {
         System.out.println("¿Que pelicula quieres buscar?");
