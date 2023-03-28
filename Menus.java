@@ -261,6 +261,11 @@ public class Menus {
              break;
             }
     }
+    public static void VerComentariosBorrados(){
+        for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
+            System.out.println(RottenApp.ComentariosBorrados.get(i));
+        }
+    }
     //imprime todos los comentarips
     public static void TodosLosComentarios() {
         for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
