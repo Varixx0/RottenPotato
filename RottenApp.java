@@ -48,6 +48,12 @@ public class RottenApp {
         user.nextLine(); 
         return x;
     }
+    //Seleccionar cuenta
+    public static int SeleccionaCuenta() {
+        Menus.ListarCuentas();
+        int seleccion = PideInt(); 
+        return seleccion;
+    }
 
     public static Pelicula.genero PideGenero() {
         Pelicula.genero[] generos = Pelicula.genero.values();

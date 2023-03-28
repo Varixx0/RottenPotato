@@ -15,7 +15,7 @@ public class Usuarios {
         Admin=Ad;
         idCuenta=id; 
     }
-    public static String getNombre() {
+    public String getNombre() {
         return Nombre;
     }
     public static void setNombre(String nombre) {

@@ -215,5 +215,19 @@ public class Menus {
         }
         ImprimeMenuComentarios();
     }
-
+    //Menu administrador de cuentas
+    public static void MenuAdministrarCuentas() {
+        //Eliminar cuenta
+        //Cambiar nombre
+        //Cambiar contrasña
+    }
+    //Imprime el de una cuenta a partir de su indice. Ademas le da un numero para que sea seleccionable
+    public static void VerCuenta(int id) {
+        System.out.println(id + ". " + RottenApp.Usuarios.get(id).getNombre());
+    }
+    public static void ListarCuentas() {
+        for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
+            VerCuenta(i);
+        }
+    }
 }

@@ -1,3 +1,5 @@
+
+
 public class Logs {
     //Falta un boton de salir (Por si acaso)
     public static void CrearCuenta() {
@@ -41,5 +43,23 @@ public class Logs {
             System.out.println("La cuenta a la que intentas acceder no existe");
         }
         
+    }
+    //Administrar cuentas
+    public static void EliminarCuentas() {
+        int seleccion=RottenApp.SeleccionaCuenta();
+        RottenApp.Usuarios.remove(seleccion);
+    }
+    //Opcion de admin, adaptable al publico general, quitar seleccion cuenta
+    public static void CambiarNombre(){
+        int seleccion = RottenApp.SeleccionaCuenta();
+        System.out.println("¿Que nombre te gustaria poner?");
+        String NuevoNom= RottenApp.PideString();
+        RottenApp.Usuarios.get(seleccion).setNombre(NuevoNom);
+    }
+    public static void CambiarContra(){
+        int seleccion = RottenApp.SeleccionaCuenta();
+        System.out.println("Que contraseña te gustaria poner?");
+        String Contra= RottenApp.PideString();
+        RottenApp.Usuarios.get(seleccion).setContraseña(Contra);
     }
 }
