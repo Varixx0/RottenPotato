@@ -70,7 +70,7 @@ public class Menus {
                 RottenApp.CrearPelicula();
                 break;
             case 2:
-                VerPeliculas();
+                ImprimeMenuVerPeliculas();
                 break;
             case 3:
                 SelectorMenuAdministrarCuentas();
@@ -137,29 +137,29 @@ public class Menus {
     public static void SelectorVerPelicula() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                VerPeliculas();
                 break;
             case 2:
-             // Lógica para ver las películas
+                ImprimeMenuVerPeliculasBuscarPelicula();
                 break;
             case 3:
-             // Lógica para modificar la cuenta
+                ImprimeMenu();
                 break;
             }
     }
     public static void SelectorVarPeliculaAdmin() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                VerPeliculas();
                 break;
             case 2:
-             // Lógica para ver las películas
+                 ImprimeMenuVerPeliculasBuscarPelicula();
                 break;
             case 3:
-             // Lógica para modificar la cuenta
+                ImprimeMenu();
                 break;
             case 4:
-                // Lógica para salir de la cuenta
+                // Administrar peliculas
             break;
             }
     }
@@ -194,14 +194,14 @@ public class Menus {
             }
     }
     //Imprime la ficha de la pelicula seleccionada
-    public static void ImprimeFichaPelicula(int index) {
+    public static void ImprimeFichaPelicula() {
         System.out.println("/////////////////");
-        System.out.println("TITULO: " + RottenApp.Peliculas.get(index).getNombre());
-        System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(index).getDuracion()));
-        System.out.println("VALORACION: " +String.valueOf(RottenApp.Peliculas.get(index).getValoracion()) + "*");
-        System.out.println("GENERO: " + String.valueOf(RottenApp.Peliculas.get(index).getGenero()));
+        System.out.println("TITULO: " + RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre());
+        System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getDuracion()));
+        System.out.println("VALORACION: " +String.valueOf(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getValoracion()) + "*");
+        System.out.println("GENERO: " + String.valueOf(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getGenero()));
         System.out.println("/////////////////");
-        System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(index).getDescripcion());
+        System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getDescripcion());
         ImprimeTresComentarios();
 
     }
