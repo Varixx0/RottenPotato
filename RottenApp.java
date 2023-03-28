@@ -17,7 +17,6 @@ public class RottenApp {
        Peliculas.get(idPeliculaSelect).añadirComentario("Hola");
        Menus.TodosLosComentarios();
     }
-    //Para ti niño
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
         Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
