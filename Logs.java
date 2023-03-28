@@ -51,17 +51,35 @@ public class Logs {
     }
     //Opcion de admin, adaptable al publico general, quitar seleccion cuenta
     public static void CambiarNombre(){
-        int seleccion = RottenApp.SeleccionaCuenta();
+        int seleccion;
+        if (RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
+            seleccion = RottenApp.SeleccionaCuenta();
+        } else {
+            seleccion=RottenApp.UserIdLogged;
+        }
         System.out.println("¿Que nombre te gustaria poner?");
         String NuevoNom= RottenApp.PideString();
         RottenApp.Usuarios.get(seleccion);
         Usuarios.setNombre(NuevoNom);
     }
     public static void CambiarContra(){
-        int seleccion = RottenApp.SeleccionaCuenta();
-        System.out.println("Que contraseña te gustaria poner?");
-        String Contra= RottenApp.PideString();
-        RottenApp.Usuarios.get(seleccion);
-        Usuarios.setContraseña(Contra);
+        int seleccion;
+        boolean Verificacion=false; 
+        if (RottenApp.Usuarios.get(RottenApp.UserIdLogged).isAdmin()) {
+            seleccion = RottenApp.SeleccionaCuenta();
+            Verificacion=true; 
+        } else {
+            seleccion= RottenApp.UserIdLogged;  
+            Verificacion=Comprobacio.VerificaContra();
+            
+        }
+        if (Verificacion) {
+            System.out.println("Que contraseña te gustaria poner?");
+            String Contra= RottenApp.PideString();
+            RottenApp.Usuarios.get(seleccion);
+            Usuarios.setContraseña(Contra);
+        }else{
+            System.out.println("La contraseña que has introducido es incorrecta");
+        }
     }
 }
