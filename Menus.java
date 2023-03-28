@@ -267,7 +267,7 @@ public class Menus {
                 ImprimeMenuComentar();
                 break;
             case 3:
-                //Salir
+                ImprimeMenu();
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
