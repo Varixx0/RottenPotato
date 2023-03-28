@@ -57,7 +57,7 @@ public class RottenApp {
 
     public static void VerPeliculas(){
         for (int index = 0; index < Peliculas.size(); index++) {
-            
+            System.out.println( (index+1) +" "+Peliculas.get(index).getNombre());
         }
     }
 
