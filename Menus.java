@@ -1,5 +1,4 @@
 
-
 public class Menus {
     //Inicio Log in
     public static void MenuLogIn() {
@@ -80,7 +79,7 @@ public class Menus {
                 Logs.LogOut();
             break;
             case 5:
-                //Bloq Desbloq
+
                 break;
             case 6:
                 
@@ -289,6 +288,30 @@ public class Menus {
              break;
             }
     }
+
+    //Submenu de admin para bloquear/Desbloquear personas. 
+    public static void MenuAdminBloqDesbloq() {
+        System.out.println("1. Ver cuentas bloqueadas");
+        System.out.println("2. Bloquear cuentas");
+        System.out.println("3. Desbloquear cuentas");
+        System.out.println("4. Salir");
+    }
+    public static void SelectorMenuAdminBloqDesbloq() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Logs.EliminarCuentas();
+                break;
+            case 2:
+                Logs.CambiarNombre();
+                break;
+            case 3:
+                Logs.CambiarContra();
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
+    }
     //Imprime el de una cuenta a partir de su indice. Ademas le da un numero para que sea seleccionable
     public static void VerCuenta(int id) {
         System.out.println(id + ". " + RottenApp.Usuarios.get(id).getNombre());
@@ -309,4 +332,5 @@ public class Menus {
             VerCuenta(i);
         }
     }
+
 }
