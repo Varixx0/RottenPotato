@@ -14,12 +14,13 @@ public class Pelicula {
 
    
     //Constructor
-    public Pelicula(String nombre,int duracion,double valoracion,genero Genero, String Desc){
+    public Pelicula(String nombre,int duracion,double valoracion,genero Genero, String Desc,int id){
         this.nombre = nombre;
         this.duracion = duracion;
         this.valoracion = valoracion;
         this.Tipo = Genero;
         this.Descripcion=Desc;
+        this.id = id;
     }
 
     //Arrays
