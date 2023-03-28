@@ -80,4 +80,9 @@ public class Comprobacio {
             return false; 
         }
     }
+    public static boolean VerificaContra(){
+        System.out.println("Por favor introduce tu contraseña actual: ");
+        String Contra = RottenApp.PideString(); 
+        return ComparaConras(Contra, RottenApp.UserIdLogged);
+    }
 }
