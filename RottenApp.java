@@ -14,9 +14,7 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-        //Menus.ImprimeMenu();
-        Pelicula.añadirComentario("Duncan");
-        Menus.VerComentariosBorrados();
+        Menus.ImprimeMenu();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -150,7 +148,7 @@ public class RottenApp {
         System.out.println("Elige el id la pelicula que deseas seleccionar: ");
         int id = PideInt(); 
         idPeliculaSelect = id; 
-        Menus.ImprimeFichaPelicula(id);
+        Menus.ImprimeFichaPelicula();
     }
     public static void AñadirComentario(){
         SeleccionarPelicula();

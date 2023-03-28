@@ -67,8 +67,8 @@ public class Pelicula {
     //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
     public static void añadirPalabraVetada(){
         boolean esta = false;
-        String palabra = RottenApp.PideString();
         System.out.println("Dime la palabra vetada");
+        String palabra = RottenApp.PideString();
         for (int i = 0; i <RottenApp.PalabrasVetadas.size(); i++) {
             if (RottenApp.PalabrasVetadas.get(i).toLowerCase().equals(palabra.toLowerCase())) {
                 esta = true;
@@ -78,7 +78,7 @@ public class Pelicula {
             System.out.println("Esa palabra ya existe");
         }
         else{
-            RottenApp.PalabrasVetadas.add(palabra);
+            RottenApp.PalabrasVetadas.add(palabra.toLowerCase());
         } 
     }
     public void setAutor(String Autr){
@@ -102,12 +102,14 @@ public class Pelicula {
 
     //Función que añade comentario a la pelicula que escoja el usuario 
     public static void añadirComentario(String comentario){
+        String palabras [] = comentario.split("\\s+");
         boolean esta = false;
-       for (int i = 0; i < RottenApp.PalabrasVetadas.size(); i++) {
-            if (RottenApp.PalabrasVetadas.contains(comentario)) {
+        for (int i = 0; i < palabras.length; i++) {
+            String palabra = palabras[i].toLowerCase();
+            if (RottenApp.PalabrasVetadas.contains(palabra.toLowerCase())) {
                 esta = true;
             }
-       }
+        }
        if (esta) {
         System.out.println("Has usado una palabra vetada");
         RottenApp.ComentariosBorrados.add(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre() + ": " + comentario);
