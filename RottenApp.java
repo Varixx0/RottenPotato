@@ -12,7 +12,7 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
-        AñadirComentario();
+        Menus.MenuLogIn();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));

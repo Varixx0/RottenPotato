@@ -81,4 +81,10 @@ public class Logs {
             System.out.println("La contraseña que has introducido es incorrecta");
         }
     }
+    public static void LogOut() {
+        System.out.println("Gracias por usar nuestra aplicacion");
+        RottenApp.UserIdLogged=0; 
+        Menus.MenuLogIn();
+
+    }
 }

@@ -1,4 +1,4 @@
-import java.net.SocketTimeoutException;
+
 
 public class Menus {
     //Inicio Log in
@@ -48,16 +48,16 @@ public class Menus {
     public static void SelectorMenu() {
     switch (RottenApp.PideInt()) {
         case 1:
-         // Lógica para crear una película
+            RottenApp.CrearPelicula();
             break;
         case 2:
-         // Lógica para ver las películas
+            VerPeliculas();
             break;
-     case 3:
-         // Lógica para modificar la cuenta
+        case 3:
+            MenuModCuentas();
             break;
         case 4:
-            // Lógica para salir de la cuenta
+            Logs.LogOut();
         break;
         default:
             System.out.println("Opción inválida, elige otra vez.");
@@ -68,22 +68,22 @@ public class Menus {
     public static void SelectorMenuAdmin() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                RottenApp.CrearPelicula();
                 break;
             case 2:
-             // Lógica para ver las películas
+                VerPeliculas();
                 break;
             case 3:
-             // Lógica para modificar la cuenta
+                MenuModCuentas();
                 break;
             case 4:
-                // Lógica para salir de la cuenta
+                Logs.LogOut();
             break;
             case 5:
-            //Lo k sea
+                //Bloq Desbloq
                 break;
             case 6:
-            //Movidas
+                
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
@@ -242,6 +242,28 @@ public class Menus {
             System.out.println(Pelicula.InfoComentarios(i));
         }
         ImprimeMenuComentarios();
+    }
+    //Menu modificar cuentas
+    public static void MenuModCuentas(){
+        System.out.println("1. Cambiar nombre de la cuenta");
+        System.out.println("2. Cambiar contraseña");
+        System.out.println("3. Salir");
+    }
+    public static void SelectorMenuModCuentas(){
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Logs.CambiarNombre();
+                break;
+            case 2:
+            Logs.CambiarContra();
+                break;
+            case 3:
+                //Salir
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
     }
     //Menu administrador de cuentas
     public static void MenuAdministrarCuentas() {
