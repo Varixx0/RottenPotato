@@ -1,6 +1,26 @@
 import java.net.SocketTimeoutException;
 
 public class Menus {
+    //Inicio Log in
+    public static void MenuLogIn() {
+        System.out.println("1. Crear cuenta");
+        System.out.println("2. Entrar en mi cuenta");
+        SelectorMenuLogIn();
+        //Salir Quizas
+    }
+    public static void SelectorMenuLogIn() {
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Logs.CrearCuenta();
+                break;
+            case 2:
+                Logs.LogInCuenta();
+                break;
+            default:
+                System.out.println("Opción inválida, elige otra vez.");
+             break;
+            }
+    }
     //Imprime el menu principal
     public static void ImprimeMenu() {
         System.out.println("Elige la opcion que deseas ejecutar");

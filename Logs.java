@@ -34,6 +34,7 @@ public class Logs {
                 System.out.println("Buenos dias " + RottenApp.Usuarios.get(idUsuario).getNombre()) ;
                 System.out.println("////////////////");
                 RottenApp.UserIdLogged=idUsuario;
+                Menus.ImprimeMenu();
             } else {
                 System.out.println("Contraseña incorrecta");
                 LogInCuenta();

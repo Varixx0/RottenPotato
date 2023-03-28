@@ -10,13 +10,13 @@ public class Usuarios {
     }
 
     public Usuarios(String Nom , String Con , Boolean Ad, int id) {
-        Nombre=Nom;
-        Contraseña=Con;
-        Admin=Ad;
-        idCuenta=id; 
+        this.Nombre=Nom;
+        this.Contraseña=Con;
+        this.Admin=Ad;
+        this.idCuenta=id;
     }
     public String getNombre() {
-        return Nombre;
+        return this.Nombre;
     }
     public static void setNombre(String nombre) {
         Nombre = nombre;
