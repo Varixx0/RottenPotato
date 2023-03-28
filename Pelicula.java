@@ -7,6 +7,7 @@ public class Pelicula {
     private double valoracion;
     private genero Tipo;
     private String Descripcion;
+    private int id;
     public  enum genero{
         terror,accion,romance,comedia,suspense,aventura,drama,animacion,infantil,policiaca,misterio,historico,familiar,seasonal;
     }
@@ -47,6 +48,12 @@ public class Pelicula {
         return this.Tipo;
     }
     
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     //get
     public String getDescripcion() {
         return Descripcion;
