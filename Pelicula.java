@@ -152,4 +152,18 @@ public class Pelicula {
         RottenApp.ComentariosBorrados.remove(seleccion);
 
     }
+
+    public static void BorrarComentario(){
+        System.out.println("Escoge la película");
+        for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
+            System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
+        }
+        int pelicula = RottenApp.PideInt() - 1;
+        for (int i = 0; i <RottenApp.Peliculas.get(pelicula).Comentarios.size(); i++) {
+            RottenApp.Peliculas.get(pelicula).Comentarios.get(i);
+        }
+        System.out.println("Ahora dime el comentario que quieres borrar");
+        int comentario = RottenApp.PideInt();
+        RottenApp.Peliculas.get(pelicula).Comentarios.remove(comentario);
+    }
 }
