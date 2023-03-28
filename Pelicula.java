@@ -65,6 +65,7 @@ public class Pelicula {
     public void setDescripcion(String descripcion) {
         Descripcion = descripcion;
     }
+    //Porque esto no esta en rottenAPP ?????? 
     //Función para añadir palabras al array de palabras vetadas puede ser llamado en cualquier momento
     public static void añadirPalabraVetada(){
         boolean esta = false;
@@ -81,6 +82,7 @@ public class Pelicula {
         else{
             RottenApp.PalabrasVetadas.add(palabra);
         } 
+        Menus.ImprimeMenuPalabrasVetadas();
     }
     public void setAutor(String Autr){
         Autor=Autr; 
@@ -99,6 +101,7 @@ public class Pelicula {
         else{
             RottenApp.PalabrasVetadas.remove(posiPalabra);
         }
+        Menus.ImprimeMenuPalabrasVetadas();
     }
 
     //Función que añade comentario a la pelicula que escoja el usuario 

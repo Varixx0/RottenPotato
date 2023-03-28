@@ -86,7 +86,7 @@ public class Menus {
                 MenuAdminBloqDesbloq();
                 break;
             case 6:
-                MenuPalabrasVetadas();
+                ImprimeMenuPalabrasVetadas();
                 break;
             
             default:
@@ -107,6 +107,7 @@ public class Menus {
         switch (RottenApp.PideInt()) {
             case 1:
                 VerPalabrasVetadas();
+                ImprimeMenuPalabrasVetadas();
                 break;
             case 2:
                 Pelicula.añadirPalabraVetada();
@@ -275,7 +276,6 @@ public class Menus {
             case 1:
                 Pelicula.AutorizarComentarios();
                 break;
-        
             case 2:
                 Pelicula.BorrarComentario();
             default:
@@ -404,7 +404,7 @@ public class Menus {
 
     public static void VerPalabrasVetadas(){
         for (int i = 0; i < RottenApp.PalabrasVetadas.size() ; i++) {
-            System.out.println(RottenApp.PalabrasVetadas.get(i));
+            System.out.println(i+". "+RottenApp.PalabrasVetadas.get(i));
         }
     }
     public static void ListarCuentas() {
