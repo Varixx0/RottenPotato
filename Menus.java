@@ -211,11 +211,17 @@ public class Menus {
         ImprimeTresComentarios();
 
     }
-    //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios
+    //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios.
     public static void ImprimeTresComentarios() {
-        for (int i = 0; i < 3; i++) {
-           System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).InfoComentarios(i)); 
+        
+        int numComentarios = RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size();
+        int numComentariosAMostrar = Math.min(numComentarios, 3);
+        for (int i = 0; i < numComentariosAMostrar; i++) {
+            System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).InfoComentarios(i)); 
         }
+        if (numComentarios == 0) {
+            System.out.println("No hay comentarios.");
+        } 
         ImprimeMenuComentarios();
     }
     public static void ImprimeMenuComentarios() {
