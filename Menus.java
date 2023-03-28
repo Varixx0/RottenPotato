@@ -56,7 +56,7 @@ public class Menus {
             SelectorMenuModificarCuenta();
             break;
         case 4:
-            // Lógica para salir de la cuenta
+            Logs.LogOut();
         break;
         default:
             System.out.println("Opción inválida, elige otra vez.");
@@ -76,10 +76,10 @@ public class Menus {
                 SelectorMenuAdministrarCuentas();
                 break;
             case 4:
-                // Lógica para salir de la cuenta
+                Logs.LogOut();
             break;
             case 5:
-                //Bloq Desbloq
+                MenuAdminBloqDesbloq();
                 break;
             case 6:
                 MenuPalabrasVetadas();
