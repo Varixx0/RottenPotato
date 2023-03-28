@@ -7,6 +7,7 @@ public class Pelicula {
     private double valoracion;
     private genero Tipo;
     private String Descripcion;
+    private String Autor;
     private int id;
     public  enum genero{
         terror,accion,romance,comedia,suspense,aventura,drama,animacion,infantil,policiaca,misterio,historico,familiar,seasonal;
@@ -14,13 +15,14 @@ public class Pelicula {
 
    
     //Constructor
-    public Pelicula(String nombre,int duracion,double valoracion,genero Genero, String Desc,int id){
+    public Pelicula(String nombre,int duracion,double valoracion,genero Genero, String Autor, String Desc,int id){
         this.nombre = nombre;
         this.duracion = duracion;
         this.valoracion = valoracion;
         this.Tipo = Genero;
         this.Descripcion=Desc;
         this.id = id;
+        this.Autor=Autor;
     }
 
     //Arrays
@@ -78,6 +80,12 @@ public class Pelicula {
         else{
             RottenApp.PalabrasVetadas.add(palabra);
         } 
+    }
+    public void setAutor(String Autr){
+        Autor=Autr; 
+    }
+    public String getAutor(){
+        return Autor;
     }
 
     public static void BorrarPalabrasVetadas(){

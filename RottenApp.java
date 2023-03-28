@@ -19,12 +19,12 @@ public class RottenApp {
         Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
         Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
         Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
-        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil, "",0));
-        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"",1));
-        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"",2));
-        Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"",3));
-        Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"",4));
-        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"",5));
+        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"", "",0));
+        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"","",1));
+        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"Tarantino","",2));
+        Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"Duncan","",3));
+        Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Rua","",4));
+        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Sergio","",5));
         PalabrasVetadas.add("Malo");
         PalabrasVetadas.add("Bueno");
         PalabrasVetadas.add("Nazi");
@@ -88,13 +88,15 @@ public class RottenApp {
         String nombre = PideString();
         System.out.println("Dame la duración de la película");
         int duracion = PideInt();
+        System.out.println("Dame el autor de la película");
+        String Autor = PideString();
         System.out.println("Dame la valoración de la película");
         double valoracion = PideDouble();
         Pelicula.genero genero = PideGenero();
         System.out.println("Esccribe una descripción");
         String descrip = PideString();
        if (Comprobacio.comprobarTodoPelicula(duracion, nombre, valoracion)) {
-        Peliculas.add(new Pelicula(nombre, duracion, valoracion, genero, descrip,Peliculas.size()));
+        Peliculas.add(new Pelicula(nombre, duracion, valoracion, genero,Autor, descrip,Peliculas.size()));
        }
        else{
         System.out.println("Has introducido valores incorrectos");
@@ -105,7 +107,34 @@ public class RottenApp {
         String Titulo= PideString(); 
         for (int i = 0; i < Peliculas.size(); i++) {
             if (Peliculas.get(i).getNombre().indexOf(Titulo)!=-1) {
-                System.out.println("ID: " );
+                System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+            }
+        }
+    }
+    public static void BuscarPeliculaAutor() {
+        System.out.println("¿Que Autor quieres buscar?");
+        String Autor= PideString(); 
+        for (int i = 0; i < Peliculas.size(); i++) {
+            if (Peliculas.get(i).getAutor().indexOf(Autor)!=-1) {
+                System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+            }
+        }
+    }
+    public static void BuscarPeliculaValoracion(){
+        System.out.println("¿A partir de que valoracion quieres buscar?");
+        Double Valor = PideDouble(); 
+        for (int i = 0; i < Peliculas.size(); i++) {
+            if (Peliculas.get(i).getValoracion()>Valor) {
+                System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+            }
+        }
+    }
+    public static void BuscarPeliculaGenero() {
+        System.out.println("¿Que Genero quieres buscar?");
+        Pelicula.genero Genero= PideGenero(); 
+        for (int i = 0; i < Peliculas.size(); i++) {
+            if (Peliculas.get(i).getAutor().equals(Genero)) {
+                System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
         }
     }

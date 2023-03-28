@@ -177,19 +177,19 @@ public class Menus {
     public static void SelectorBuscarPelicula() {
         switch (RottenApp.PideInt()) {
             case 1:
-             // Lógica para crear una película
+                RottenApp.BuscarPeliculaTitulo();
                 break;
             case 2:
-             // Lógica para ver las películas
+                RottenApp.BuscarPeliculaAutor();
                 break;
             case 3:
-             // Lógica para modificar la cuenta
+                RottenApp.BuscarPeliculaGenero();
                 break;
             case 4:
-                // Lógica para salir de la cuenta
+                RottenApp.BuscarPeliculaValoracion();
             break;
             case 5:
-            //Lo k sea
+                ImprimeMenu();
                 break;
             }
     }
