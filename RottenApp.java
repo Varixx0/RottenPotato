@@ -54,11 +54,11 @@ public class RottenApp {
         int seleccion = PideInt(); 
         return seleccion;
     }
-
-    public static void VerPeliculas(){
-        for (int index = 0; index < Peliculas.size(); index++) {
-            System.out.println( (index+1) +" "+Peliculas.get(index).getNombre());
-        }
+    
+    public static int SeleccionarPelicula() {
+        Menus.VerPeliculas();
+        int seleccion = PideInt();
+        return seleccion;
     }
 
     public static Pelicula.genero PideGenero() {

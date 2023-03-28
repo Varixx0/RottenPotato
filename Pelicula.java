@@ -75,16 +75,6 @@ public class Pelicula {
        }
     }
     
-    public void VerUltimComentarios(){
-        if (RottenApp.Peliculas.size() > 0){
-            for (int i = 0; i< 3; i++) {
-                for (int j = 0; j < 3 ;j++) {
-                    RottenApp.Peliculas.get(i).Comentarios.get(j);
-                }
-            }
-        }
-    }
-
     
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
