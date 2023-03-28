@@ -8,11 +8,14 @@ public class RottenApp {
     public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
     public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
-    static int UserIdLogged; 
+    static int UserIdLogged = 0; 
+    static int idPeliculaSelect  = 0 ;
 
     public static void main(String[] args) {
         ContenidoInicial();
-        Menus.MenuLogIn();
+       // Menus.MenuLogIn(); 
+       Peliculas.get(idPeliculaSelect).añadirComentario("Hola");
+       Menus.TodosLosComentarios();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -142,6 +145,6 @@ public class RottenApp {
         SeleccionarPelicula();
         System.out.println("Escribe tu comentario");
         String comentario = user.nextLine();
-        Pelicula.añadirComentario(comentario);
+        Peliculas.get(UserIdLogged).Comentarios.add( Usuarios.get(UserIdLogged).getNombre()+ ": "+ comentario);
     }
 }

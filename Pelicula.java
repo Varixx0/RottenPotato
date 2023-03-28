@@ -112,7 +112,7 @@ public class Pelicula {
         System.out.println("Has usado una palabra vetada");
        }
        else{
-        Comentarios.add(comentario);
+        Comentarios.add( + comentario);
        }
     }
     

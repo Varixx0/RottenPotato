@@ -208,7 +208,7 @@ public class Menus {
     //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios
     public static void ImprimeTresComentarios() {
         for (int i = 0; i < 3; i++) {
-           System.out.println(Pelicula.InfoComentarios(i)); 
+           System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).InfoComentarios(i)); 
         }
         ImprimeMenuComentarios();
     }
@@ -264,7 +264,7 @@ public class Menus {
     //imprime todos los comentarips
     public static void TodosLosComentarios() {
         for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
-            System.out.println(Pelicula.InfoComentarios(i));
+            System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
         }
         ImprimeMenuComentarios();
     }
