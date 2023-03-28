@@ -6,24 +6,36 @@ import java.util.Scanner;
 public class RottenApp {
     private static Scanner user = new Scanner (System.in);
     public static ArrayList <Pelicula> Peliculas = new ArrayList<>();
-    public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
+    public static ArrayList <Usuarios> Usuaries = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
     static int UserIdLogged; 
 
     public static void main(String[] args) {
         ContenidoInicial();
+        Usuaries.add(new Usuarios("Hulio", "pepe", true, 4));
+        System.out.println(Usuaries.get(4).getNombre());
         AñadirComentario();
+
+        for (int i = 0; i <4; i++) {
+            System.out.println(Usuaries.get(i).getNombre());
+        }
     }
     public static void ContenidoInicial() {
-        Usuarios.add(new Usuarios("Pepe","1234",true, 0));
-        Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
-        Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
-        Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
+        Usuaries.add(new Usuarios("Pepe","1234",true, 0));
+        System.out.println(Usuaries.get(0).getNombre());
+        Usuaries.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
+        System.out.println(Usuaries.get(1).getNombre());
+        Usuaries.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
+        System.out.println(Usuaries.get(2).getNombre());
+        Usuaries.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
+        System.out.println(Usuaries.get(3).getNombre());
+
         Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil, ""));
         Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,""));
         Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,""));
         Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,""));
         Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,""));
+        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,""));
         PalabrasVetadas.add("Malo");
         PalabrasVetadas.add("Bueno");
         PalabrasVetadas.add("Nazi");

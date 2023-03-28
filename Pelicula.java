@@ -61,7 +61,7 @@ public class Pelicula {
 
     //Función que añade comentario a la pelicula que escoja el usuario 
     public static void añadirComentario(String comentario){
-       boolean esta = false;
+        boolean esta = false;
        for (int i = 0; i < RottenApp.PalabrasVetadas.size(); i++) {
             if (RottenApp.PalabrasVetadas.contains(comentario)) {
                 esta = true;
