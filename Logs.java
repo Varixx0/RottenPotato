@@ -87,4 +87,23 @@ public class Logs {
         Menus.MenuLogIn();
 
     }
+    public static void BloquearUsuario(){
+        int seleccion = RottenApp.SeleccionaCuenta();
+        RottenApp.Usuarios.get(seleccion).setBloquedo(true);
+    }
+    //Desbloquear usuaruis
+    public static void DesbloquearUsuario() {
+        VerBloqueados();
+        //Selecciona la id de la cuenta que quieras bloquear
+        int seleccion = RottenApp.PideInt();
+        RottenApp.Usuarios.get(seleccion).setBloquedo(false);
+    }
+    //Ver usuarios bloqueados
+    public static void VerBloqueados(){
+        for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
+            if (RottenApp.Usuarios.get(i).getBloqueado()) {
+                System.out.println("ID: "+ RottenApp.Usuarios.get(i).getID() + ". " + RottenApp.Usuarios.get(i).getNombre());
+            }
+        }
+    }
 }

@@ -3,6 +3,7 @@ public class Usuarios {
     private String Contraseña;
     private boolean Admin;
     private int idCuenta;
+    private Boolean bloqueado =false; 
 
     
 
@@ -33,7 +34,13 @@ public class Usuarios {
     public void setAdmin(boolean admin) {
         Admin = admin;
     } 
-
-
-    
+    public int getID() {
+        return idCuenta;
+    }
+    public void setBloquedo(Boolean Bloq){
+        bloqueado=Bloq;
+    }
+    public boolean getBloqueado(){
+        return bloqueado; 
+    }
 }
