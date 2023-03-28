@@ -103,10 +103,15 @@ public class Logs {
     }
     //Ver usuarios bloqueados
     public static void VerBloqueados(){
+        boolean HayBloqueados= false; 
         for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
             if (RottenApp.Usuarios.get(i).getBloqueado()) {
                 System.out.println("ID: "+ RottenApp.Usuarios.get(i).getID() + ". " + RottenApp.Usuarios.get(i).getNombre());
+                HayBloqueados=true;
             }
+        }
+        if (!HayBloqueados) {
+            System.out.println("No hay cuentas bloqueadas");   
         }
     }
 }

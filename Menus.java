@@ -306,6 +306,7 @@ public class Menus {
         switch (RottenApp.PideInt()) {
             case 1:
                 Logs.VerBloqueados();
+                ImprimeMenu();
                 break;
             case 2:
                 Logs.BloquearUsuario();
