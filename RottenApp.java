@@ -13,8 +13,14 @@ public class RottenApp {
 
     public static void main(String[] args) {
         ContenidoInicial();
+<<<<<<< HEAD
         Menus.MenuLogIn(); 
        
+=======
+        Menus.ImprimeMenu();
+       //Peliculas.get(idPeliculaSelect).añadirComentario("Hola");
+      // Menus.TodosLosComentarios();
+>>>>>>> 9f51b8da104b29cf8b6d4b2e7fbaab10242c25f3
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -112,6 +118,7 @@ public class RottenApp {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
         }
+        SeleccionaPeliculaPorId();
     }
     public static void BuscarPeliculaAutor() {
         System.out.println("¿Que Autor quieres buscar?");
@@ -121,6 +128,7 @@ public class RottenApp {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
         }
+        SeleccionaPeliculaPorId();
     }
     public static void BuscarPeliculaValoracion(){
         System.out.println("¿A partir de que valoracion quieres buscar?");
@@ -130,6 +138,7 @@ public class RottenApp {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
         }
+        SeleccionaPeliculaPorId();
     }
     public static void BuscarPeliculaGenero() {
         System.out.println("¿Que Genero quieres buscar?");
@@ -139,6 +148,13 @@ public class RottenApp {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
         }
+        SeleccionaPeliculaPorId();
+    }
+    public static void SeleccionaPeliculaPorId() {
+        System.out.println("Elige el id la pelicula que deseas seleccionar: ");
+        int id = PideInt(); 
+        idPeliculaSelect = id; 
+        Menus.ImprimeFichaPelicula();
     }
     public static void AñadirComentario(){
         SeleccionarPelicula();
