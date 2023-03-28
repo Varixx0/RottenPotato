@@ -18,21 +18,7 @@ public class RottenApp {
        Menus.TodosLosComentarios();
     }
     public static void ContenidoInicial() {
-        Usuarios.add(new Usuarios("Pepe","1234",true, 0));
-        Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
-        Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
-        Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
-        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"", "",0));
-        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"","",1));
-        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"Tarantino","",2));
-        Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"Duncan","",3));
-        Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Rua","",4));
-        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Sergio","",5));
-        PalabrasVetadas.add("Malo");
-        PalabrasVetadas.add("Bueno");
-        PalabrasVetadas.add("Nazi");
-        PalabrasVetadas.add("Duncan");
-        PalabrasVetadas.add("Sergi");
+        
         
     }
     //Setter y Getter
