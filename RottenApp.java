@@ -100,7 +100,15 @@ public class RottenApp {
         System.out.println("Has introducido valores incorrectos");
        }
     }
-
+    public static void BuscarPeliculaTitulo() {
+        System.out.println("¿Que pelicula quieres buscar?");
+        String Titulo= PideString(); 
+        for (int i = 0; i < Peliculas.size(); i++) {
+            if (Peliculas.get(i).getNombre().indexOf(Titulo)!=-1) {
+                System.out.println("ID: " );
+            }
+        }
+    }
     public static void AñadirComentario(){
         SeleccionarPelicula();
         System.out.println("Escribe tu comentario");
