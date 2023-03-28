@@ -1,5 +1,5 @@
 
-
+//duncan castellano
 public class Logs {
     //Falta un boton de salir (Por si acaso)
     public static void CrearCuenta() {
