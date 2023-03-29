@@ -16,7 +16,7 @@ public class RottenApp {
 
         ContenidoInicial();
         //Menus.MenuLogIn();
-    
+        Pelicula.CambiarGenero();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -158,10 +158,5 @@ public class RottenApp {
         idPeliculaSelect = id-1; 
         Menus.ImprimeFichaPelicula();
     }
-    public static void AñadirComentario(){
-        SeleccionarPelicula();
-        System.out.println("Escribe tu comentario");
-        String comentario = user.nextLine();
-        Peliculas.get(UserIdLogged).Comentarios.add( Usuarios.get(UserIdLogged).getNombre()+ ": "+ comentario);
-    }
+   
 }

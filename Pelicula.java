@@ -52,7 +52,9 @@ public class Pelicula {
     public genero getGenero(){
         return this.Tipo;
     }
-    
+    public void setGenero(genero tipo){
+        this.Tipo = tipo;
+    }
     public int getId() {
         return id;
     }
@@ -236,6 +238,18 @@ public class Pelicula {
             }
         } while (valoracion < 60);
         RottenApp.Peliculas.get(pelicula).setValoracion(valoracion);
+        System.out.println();
+        System.out.println();
+        System.out.println("Nueva ficha");
+        Menus.ImprimeFichaPelicula(pelicula);
+    }
+
+    public static void CambiarGenero(){
+        int pelicula = ElegirPelícula();
+        System.out.println("Este es el antiguo género de la película " + RottenApp.Peliculas.get(pelicula).getGenero());
+        System.out.println("Dime el género nuevo de la película");
+        Pelicula.genero genero = RottenApp.PideGenero();
+        RottenApp.Peliculas.get(pelicula).setGenero(genero);
         System.out.println();
         System.out.println();
         System.out.println("Nueva ficha");
