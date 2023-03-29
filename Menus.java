@@ -215,9 +215,9 @@ public class Menus {
             case 4:
                 Pelicula.CambiarGenero();
             case 5:
-                //Pelicula.CambiarDescripcion();
+                Pelicula.CambiarDescripcion();
             case 6:
-                //Pelicula.EliminarPelicula();
+                Pelicula.EliminarPelicula();
             default:
                 System.out.println("Esa opción no existe, elige otra");
                 ImprimeMenuAdministrarPeliculas();
