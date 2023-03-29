@@ -13,10 +13,8 @@ public class RottenApp {
     static int idPeliculaSelect ;
 
     public static void main(String[] args) {
-
         ContenidoInicial();
-        //Menus.MenuLogIn();
-        Pelicula.EliminarPelicula();
+        Menus.MenuLogIn();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
@@ -157,6 +155,61 @@ public class RottenApp {
         int id = PideInt(); 
         idPeliculaSelect = id-1; 
         Menus.ImprimeFichaPelicula();
+    }
+    //Función para añadir palabras al array de palabras vetadas, no deja tener dos palabras iguales
+    public static void añadirPalabraVetada(){
+        boolean esta = false;
+        System.out.println("Dime la palabra vetada");
+        String palabra = RottenApp.PideString().toLowerCase();
+        for (int i = 0; i <RottenApp.PalabrasVetadas.size(); i++) {
+            if (RottenApp.PalabrasVetadas.get(i).toLowerCase().equals(palabra)) {
+                esta = true;
+            }
+        }
+        if(esta){
+            System.out.println("Esa palabra ya existe");
+        }
+        else{
+            RottenApp.PalabrasVetadas.add(palabra);
+        } 
+        Menus.ImprimeMenuPalabrasVetadas();
+    }
+
+    public static void BorrarPalabrasVetadas(){
+        Menus.VerPalabrasVetadas();
+        System.out.println("Elige la palabra vetada");
+        int posiPalabra = RottenApp.PideInt();
+        if (RottenApp.PalabrasVetadas.get(posiPalabra).isEmpty()) {
+            System.out.println("Esa palabra no existe");
+        }
+        else{
+            RottenApp.PalabrasVetadas.remove(posiPalabra);
+        }
+        Menus.ImprimeMenuPalabrasVetadas();
+    }
+
+    //Funcion que muestra los comentarios borrados y permite que un admin los restaure
+    public static void AutorizarComentarios(){
+        if (RottenApp.ComentariosBorrados.size()> 0) { //Primero se comprueba si hay comentarios borrados
+            for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) { 
+                System.out.println((i+1 ) + " " + RottenApp.ComentariosBorrados.get(i) );
+                ;
+            }
+            System.out.println("Selecciona un comentario");
+            int seleccion = RottenApp.PideInt() -1;
+            //int posiPelicula = RottenApp.PalabrasVetadas.get(seleccion).indexOf(':'); idea para hacerlo más óptimo
+            System.out.println("Selecciona la película donde quieres guardar el comentario");
+            for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
+                System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
+            }
+            int pelicula = RottenApp.PideInt() - 1;
+            RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion));
+            RottenApp.ComentariosBorrados.remove(seleccion);
+        }
+        else{
+            System.out.println("No hay comentarios borrados");
+            Menus.ImprimeMenu();
+        }
     }
    
 }

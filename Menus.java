@@ -130,9 +130,9 @@ public class Menus {
                 ImprimeMenuPalabrasVetadas();
                 break;
             case 2:
-                Pelicula.añadirPalabraVetada();
+                RottenApp.añadirPalabraVetada();
             case 3:
-                Pelicula.BorrarPalabrasVetadas();
+                RottenApp.BorrarPalabrasVetadas();
             case 4:
                 ImprimeMenu();
             default:
@@ -344,7 +344,7 @@ public class Menus {
     public static void SelectorMenuAdministarComentarios(){
         switch (RottenApp.PideInt()) {
             case 1:
-                Pelicula.AutorizarComentarios();
+                RottenApp.AutorizarComentarios();
                 break;
             case 2:
                 Pelicula.BorrarComentario();
