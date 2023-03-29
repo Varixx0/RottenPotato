@@ -209,9 +209,9 @@ public class Menus {
                 Pelicula.CambiarNombre();
                 break;
             case 2:
-                //Pelicula.CambiarValoracion();
+                Pelicula.CambiarValoracion();
             case 3:
-                //Pelicula.CambiarDuracion();
+                Pelicula.CambiarDuracion();
             case 4:
                 //Pelicula.CambiarGenero();
             case 5:

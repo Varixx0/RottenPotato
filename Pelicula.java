@@ -1,3 +1,4 @@
+import java.lang.foreign.VaList;
 import java.util.ArrayList;
 //Push
 //Atributos
@@ -201,6 +202,8 @@ public class Pelicula {
 
     public static void CambiarNombre(){
         int pelicula = ElegirPelícula();
+        System.out.println("Este su nombre antiguo antiguo");
+        System.out.println(RottenApp.Peliculas.get(pelicula).getNombre());
         System.out.println("Dime el nombre nuevo");
         RottenApp.Peliculas.get(pelicula).setNombre(RottenApp.PideString());
         System.out.println();
@@ -211,5 +214,31 @@ public class Pelicula {
 
     public static void CambiarValoracion(){
         int pelicula = ElegirPelícula();
+        System.out.println("Esta es su vieja valoración " + RottenApp.Peliculas.get(pelicula).getValoracion());
+        System.out.println("Dame su nueva valoración");
+        RottenApp.Peliculas.get(pelicula).setValoracion(RottenApp.PideDouble());
+        System.out.println();
+        System.out.println();
+        System.out.println("Nueva ficha");
+        Menus.ImprimeFichaPelicula(pelicula);
+    }
+
+    public static void CambiarDuracion(){
+        int pelicula = ElegirPelícula();
+        System.out.println("Esta es su antigua duración " + RottenApp.Peliculas.get(pelicula).getDuracion()+ " minutos");
+        int valoracion;
+        do {
+            System.out.println("Dame su nueva duración");
+            valoracion = RottenApp.PideInt();
+            if (valoracion < 60) {
+                System.out.println("Esta no es la duración de un largometraje");
+                System.out.println();
+            }
+        } while (valoracion < 60);
+        RottenApp.Peliculas.get(pelicula).setValoracion(valoracion);
+        System.out.println();
+        System.out.println();
+        System.out.println("Nueva ficha");
+        Menus.ImprimeFichaPelicula(pelicula);
     }
 }
