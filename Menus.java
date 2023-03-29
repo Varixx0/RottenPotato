@@ -19,6 +19,7 @@ public class Menus {
                 EasterEgg();
                 break;
             default:
+                System.out.println("Esa opción no existe");
                 MenuLogIn();
                 break;
             }
@@ -77,6 +78,7 @@ public class Menus {
         break;
         default:
             System.out.println("Opción inválida, elige otra vez.");
+            ImprimeMenu();
          break;
         }
     }
@@ -108,6 +110,7 @@ public class Menus {
             
             default:
                 System.out.println("Opción inválida, elige otra vez.");
+                ImprimeMenu();
              break;
             }
     }
@@ -133,6 +136,8 @@ public class Menus {
             case 4:
                 ImprimeMenu();
             default:
+                System.out.println("Esa opción no existe, elige otra");
+                ImprimeMenuPalabrasVetadas();
                 break;
         }
     }
@@ -186,6 +191,16 @@ public class Menus {
                 // Administrar peliculas
             break;
             }
+    }
+
+    public static void ImprimeMenuAdministrarPeliculas(){
+        System.out.println("////////ADMINISTRADOR////////");
+        System.out.println("1.- Cambiar nombre");
+        System.out.println("2.- Cambiar Valoración");
+        System.out.println("3.- Cambiar Duración");
+        System.out.println("4.- Cambiar género");
+        System.out.println("5.- Cambiar descripción");
+        System.out.println("6.- Eliminar Película");
     }
     //Imprime el submenu para buscar pelicula
     public static void ImprimeMenuVerPeliculasBuscarPelicula(){
