@@ -209,15 +209,15 @@ public class Menus {
                 Pelicula.CambiarNombre();
                 break;
             case 2:
-                Pelicula.CambiarValoracion();
+                //Pelicula.CambiarValoracion();
             case 3:
-                Pelicula.CambiarDuracion();
+                //Pelicula.CambiarDuracion();
             case 4:
-                Pelicula.CambiarGenero();
+                //Pelicula.CambiarGenero();
             case 5:
-                Pelicula.CambiarDescripcion();
+                //Pelicula.CambiarDescripcion();
             case 6:
-                Pelicula.EliminarPelicula();
+                //Pelicula.EliminarPelicula();
             default:
                 System.out.println("Esa opción no existe, elige otra");
                 ImprimeMenuAdministrarPeliculas();
@@ -269,6 +269,16 @@ public class Menus {
         System.out.println("/////////////////");
         System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getDescripcion());
         ImprimeTresComentarios();
+
+    } public static void ImprimeFichaPelicula(int num) {
+        System.out.println("/////////////////");
+        System.out.println("TITULO: " + RottenApp.Peliculas.get(num).getNombre());
+        System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(num).getDuracion()));
+        System.out.println("VALORACION: " +String.valueOf(RottenApp.Peliculas.get(num).getValoracion()) + "*");
+        System.out.println("GENERO: " + String.valueOf(RottenApp.Peliculas.get(num).getGenero()));
+        System.out.println("/////////////////");
+        System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(num).getDescripcion());
+        
 
     }
     //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios.

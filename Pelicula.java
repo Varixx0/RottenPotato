@@ -192,7 +192,7 @@ public class Pelicula {
     public static int ElegirPelícula(){
         System.out.println("Dime la película que quieres modificar");
         for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
-            System.out.println(i+1 +" "+RottenApp.Peliculas.get(i));
+            System.out.println(i+1 +" "+RottenApp.Peliculas.get(i).getNombre());
 
         }
         int pelicula = RottenApp.PideInt() -1;
@@ -201,6 +201,11 @@ public class Pelicula {
 
     public static void CambiarNombre(){
         int pelicula = ElegirPelícula();
-        
+        System.out.println("Dime el nombre nuevo");
+        RottenApp.Peliculas.get(pelicula).setNombre(RottenApp.PideString());
+        System.out.println();
+        System.out.println();
+        System.out.println("Nueva ficha");
+        Menus.ImprimeFichaPelicula(pelicula);
     }
 }
