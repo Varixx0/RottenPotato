@@ -16,9 +16,11 @@ public class Menus {
                 Logs.LogInCuenta();
                 break;
             case 42:
-            default:
                 EasterEgg();
-             break;
+                break;
+            default:
+                SelectorMenuLogIn();
+                break;
             }
     }
     public static void EasterEgg(){

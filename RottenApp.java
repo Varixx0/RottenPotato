@@ -9,12 +9,13 @@ public class RottenApp {
     public static ArrayList <Usuarios> Usuarios = new ArrayList<>();
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
     public static ArrayList<String> ComentariosBorrados = new ArrayList<>();
-    static int UserIdLogged = 0; 
-    static int idPeliculaSelect  = 0 ;
+    static int UserIdLogged; 
+    static int idPeliculaSelect ;
 
     public static void main(String[] args) {
+
         ContenidoInicial();
-        Menus.ImprimeMenu();
+        Menus.MenuLogIn();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
