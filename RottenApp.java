@@ -16,7 +16,7 @@ public class RottenApp {
 
         ContenidoInicial();
         //Menus.MenuLogIn();
-        Pelicula.CambiarGenero();
+        Pelicula.EliminarPelicula();
     }
     public static void ContenidoInicial() {
         Usuarios.add(new Usuarios("Pepe","1234",true, 0));
