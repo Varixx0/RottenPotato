@@ -33,11 +33,7 @@ public class Menus {
         System.out.println("  |                            .oooO                                    |");
         System.out.println("  |                            (   )   Oooo.                            |");
         System.out.println("  +-----------------------------) (----(   )----------------------------+");
-<<<<<<< HEAD
-        System.out.println("                                ()    ) /");
-=======
         System.out.println("                                (__)    ) /");
->>>>>>> d165d4b793f042173f716dce272065cfb250cb5f
         System.out.println("                                        (_/");
         Menus.MenuLogIn();
     }
@@ -219,7 +215,12 @@ public class Menus {
             case 5:
                 ImprimeMenu();
                 break;
-            }
+            
+            default:
+                System.out.println("Esa opción no existe");
+                ImprimeMenu();
+                break;
+        }
     }
     //Imprime la ficha de la pelicula seleccionada
     public static void ImprimeFichaPelicula() {
@@ -235,7 +236,6 @@ public class Menus {
     }
     //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios.
     public static void ImprimeTresComentarios() {
-        
         int numComentarios = RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size();
         int numComentariosAMostrar = Math.min(numComentarios, 3);
         for (int i = 0; i < numComentariosAMostrar; i++) {
@@ -277,6 +277,7 @@ public class Menus {
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
+                ImprimeMenuComentar();
              break;
             }
     }
@@ -312,7 +313,7 @@ public class Menus {
                 ImprimeMenuComentar();
                 break;
             case 3:
-                ImprimeMenuComentarios();
+                ImprimeMenu();
                 break;    
             case 4:
                 VerComentariosBorrados();
@@ -322,6 +323,7 @@ public class Menus {
             break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
+                ImprimeMenuComentarios();
              break;
             }
         
