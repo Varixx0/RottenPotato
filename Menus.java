@@ -188,7 +188,7 @@ public class Menus {
                 ImprimeMenu();
                 break;
             case 4:
-                // Administrar peliculas
+                ImprimeMenuAdministrarPeliculas();
             break;
             }
     }
@@ -201,6 +201,28 @@ public class Menus {
         System.out.println("4.- Cambiar género");
         System.out.println("5.- Cambiar descripción");
         System.out.println("6.- Eliminar Película");
+        MenuAdministrarPeliculas();
+    }
+    public static void MenuAdministrarPeliculas(){
+        switch (RottenApp.PideInt()) {
+            case 1:
+                Pelicula.CambiarNombre();
+                break;
+            case 2:
+                Pelicula.CambiarValoracion();
+            case 3:
+                Pelicula.CambiarDuracion();
+            case 4:
+                Pelicula.CambiarGenero();
+            case 5:
+                Pelicula.CambiarDescripcion();
+            case 6:
+                Pelicula.EliminarPelicula();
+            default:
+                System.out.println("Esa opción no existe, elige otra");
+                ImprimeMenuAdministrarPeliculas();
+                break;
+        }
     }
     //Imprime el submenu para buscar pelicula
     public static void ImprimeMenuVerPeliculasBuscarPelicula(){

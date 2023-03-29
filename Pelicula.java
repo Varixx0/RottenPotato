@@ -188,6 +188,19 @@ public class Pelicula {
             System.out.println("Esa película no tiene comentarios");
             Menus.ImprimeMenu();
         }
+    }
+    public static int ElegirPelícula(){
+        System.out.println("Dime la película que quieres modificar");
+        for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
+            System.out.println(i+1 +" "+RottenApp.Peliculas.get(i));
+
+        }
+        int pelicula = RottenApp.PideInt() -1;
+        return pelicula;
+    }
+
+    public static void CambiarNombre(){
+        int pelicula = ElegirPelícula();
         
     }
 }
