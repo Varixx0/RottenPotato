@@ -208,4 +208,8 @@ public class Pelicula {
         System.out.println("Nueva ficha");
         Menus.ImprimeFichaPelicula(pelicula);
     }
+
+    public static void CambiarValoracion(){
+        int pelicula = ElegirPelícula();
+    }
 }
