@@ -301,6 +301,8 @@ public class Menus {
             case 2:
                 Pelicula.BorrarComentario();
             default:
+                System.out.println("Esa opción no existe,elige otra");
+                ImprimeMenuAdministrarcomentarios();
                 break;
         }
     }

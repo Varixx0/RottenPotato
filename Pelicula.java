@@ -146,20 +146,27 @@ public class Pelicula {
     }
 
     public static void AutorizarComentarios(){
-        for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
-            System.out.println((i+1 ) + " " + RottenApp.ComentariosBorrados.get(i) );
-            ;
+        if (RottenApp.ComentariosBorrados.size()> 0) {
+            for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
+                System.out.println((i+1 ) + " " + RottenApp.ComentariosBorrados.get(i) );
+                ;
+            }
+            System.out.println("Selecciona un comentario");
+            int seleccion = RottenApp.PideInt() -1;
+            //int posiPelicula = RottenApp.PalabrasVetadas.get(seleccion).indexOf(':'); idea para hacerlo más óptimo
+            System.out.println("Selecciona la película donde quieres guardar el comentario");
+            for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
+                System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
+            }
+            int pelicula = RottenApp.PideInt() - 1;
+            RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion));
+            RottenApp.ComentariosBorrados.remove(seleccion);
         }
-        System.out.println("Selecciona un comentario");
-        int seleccion = RottenApp.PideInt() -1;
-        //int posiPelicula = RottenApp.PalabrasVetadas.get(seleccion).indexOf(':'); idea para hacerlo más óptimo
-        System.out.println("Selecciona la película donde quieres guardar el comentario");
-        for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
-            System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
+        else{
+            System.out.println("No hay comentarios borrados");
+            Menus.ImprimeMenu();
         }
-        int pelicula = RottenApp.PideInt() - 1;
-        RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion));
-        RottenApp.ComentariosBorrados.remove(seleccion);
+       
 
     }
 
@@ -169,11 +176,18 @@ public class Pelicula {
             System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
         }
         int pelicula = RottenApp.PideInt() - 1;
-        for (int i = 0; i <RottenApp.Peliculas.get(pelicula).Comentarios.size(); i++) {
-            RottenApp.Peliculas.get(pelicula).Comentarios.get(i);
+        if (RottenApp.Peliculas.get(pelicula).Comentarios.size() > 0) {
+            for (int i = 0; i <RottenApp.Peliculas.get(pelicula).Comentarios.size(); i++) {
+                RottenApp.Peliculas.get(pelicula).Comentarios.get(i);
+            }
+            System.out.println("Ahora dime el comentario que quieres borrar");
+            int comentario = RottenApp.PideInt();
+            RottenApp.Peliculas.get(pelicula).Comentarios.remove(comentario);
         }
-        System.out.println("Ahora dime el comentario que quieres borrar");
-        int comentario = RottenApp.PideInt();
-        RottenApp.Peliculas.get(pelicula).Comentarios.remove(comentario);
+        else{
+            System.out.println("Esa película no tiene comentarios");
+            Menus.ImprimeMenu();
+        }
+        
     }
 }
