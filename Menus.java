@@ -213,7 +213,7 @@ public class Menus {
             case 3:
                 Pelicula.CambiarDuracion();
             case 4:
-                //Pelicula.CambiarGenero();
+                Pelicula.CambiarGenero();
             case 5:
                 //Pelicula.CambiarDescripcion();
             case 6:
