@@ -19,7 +19,7 @@ public class Menus {
                 EasterEgg();
                 break;
             default:
-                SelectorMenuLogIn();
+                MenuLogIn();
                 break;
             }
     }
@@ -33,7 +33,7 @@ public class Menus {
         System.out.println("  |                            .oooO                                    |");
         System.out.println("  |                            (   )   Oooo.                            |");
         System.out.println("  +-----------------------------) (----(   )----------------------------+");
-        System.out.println("                                (  )    ) /");
+        System.out.println("                                ()    ) /");
         System.out.println("                                        (_/");
         Menus.MenuLogIn();
     }
