@@ -21,6 +21,7 @@ public class Logs {
             System.out.println("El usuario ya existe, por favor introduce otro nombre de usuario");
             CrearCuenta();
         }
+        Menus.MenuLogIn();
     }
     public static void LogInCuenta() {
         System.out.println("Por favor introduce tu nombre de usuario: ");
@@ -37,11 +38,12 @@ public class Logs {
                 Menus.ImprimeMenu();
             } else {
                 System.out.println("Contraseña incorrecta");
-                LogInCuenta();
+                Menus.MenuLogIn();
             }
 
         } else {
             System.out.println("La cuenta a la que intentas acceder no existe");
+            Menus.MenuLogIn();
         }
         
     }
