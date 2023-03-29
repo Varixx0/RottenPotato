@@ -157,8 +157,7 @@ public class Pelicula {
     }
 
     public static void nuevaFicha(int pelicula){
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
         System.out.println("Nueva ficha");
         Menus.ImprimeFichaPelicula(pelicula);
     }
@@ -216,15 +215,12 @@ public class Pelicula {
 
     public static void EliminarPelicula(){
         int pelicula = ElegirPelícula('e');
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
         System.out.println("Así era la lista antes");
         Menus.VerPeliculas();
         RottenApp.Peliculas.remove(pelicula);
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
+        System.out.println("\n");
         System.out.println("Así es ahora");
         Menus.VerPeliculas();
 
