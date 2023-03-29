@@ -290,7 +290,8 @@ public class Menus {
         System.out.println("////////ADMINISTRADOR////////");
         System.out.println("1.- Autorizar Comentarios");
         System.out.println("2.- Borrar Comentarios");
-        System.out.println("3.- Modificar comentarios <Provisional>");
+        System.out.println("3.- Salir");
+        System.out.println("4.- Modificar comentarios <Provisional>");
         SelectorMenuAdministarComentarios();
     }
     public static void SelectorMenuAdministarComentarios(){
@@ -300,6 +301,8 @@ public class Menus {
                 break;
             case 2:
                 Pelicula.BorrarComentario();
+            case 3:
+                ImprimeMenu();
             default:
                 System.out.println("Esa opción no existe,elige otra");
                 ImprimeMenuAdministrarcomentarios();
@@ -369,6 +372,7 @@ public class Menus {
                 break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
+                MenuAdministrarCuentas();
              break;
             }
     }
@@ -398,6 +402,7 @@ public class Menus {
                 ImprimeMenu();
             default:
                 System.out.println("Opción inválida, elige otra vez.");
+                MenuAdminBloqDesbloq();
              break;
             }
     
@@ -420,7 +425,8 @@ public class Menus {
                 ImprimeMenu();
             default:
                 System.out.println("Opción inválida, elige otra vez.");
-             break;
+                MenuModificarCuenta();
+                break;
             }
     }
     //Imprime el de una cuenta a partir de su indice. Ademas le da un numero para que sea seleccionable
