@@ -321,9 +321,15 @@ public class Menus {
         
     }
     public static void VerComentariosBorrados(){
-        for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
-            System.out.println(RottenApp.ComentariosBorrados.get(i));
+        if (RottenApp.ComentariosBorrados.size() > 0) {
+            for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
+                System.out.println(RottenApp.ComentariosBorrados.get(i));
+            }
         }
+        else{
+            System.out.println("No hay comentarios borrados");
+        }
+        ImprimeMenu();
     }
     //imprime todos los comentarios
     public static void TodosLosComentarios() {
