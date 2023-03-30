@@ -23,7 +23,7 @@ public class Logs {
         }
         Menus.MenuLogIn();
     }
-
+    //Hace las comprobaciones necesarias para hacer log in en una cuenta ya creada
     public static void LogInCuenta() {
         System.out.println("Por favor introduce tu nombre de usuario: ");
         String username = RottenApp.PideString(); 
@@ -37,6 +37,7 @@ public class Logs {
                   break;
                 }
                 }
+                //Comprueba si la cuenta esta bloqueada o no antes de dejar logearse
             if (RottenApp.Usuarios.get(id).getBloqueado()) {
                 System.out.println("Esa cuenta está bloqueada");
                 Menus.MenuLogIn();
