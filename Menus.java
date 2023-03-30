@@ -397,6 +397,7 @@ public class Menus {
         }
         ImprimeMenu();
     }
+    //fino
     //imprime todos los comentarios
     public static void TodosLosComentarios() {
         for (int i = 0; i < RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size(); i++) {
