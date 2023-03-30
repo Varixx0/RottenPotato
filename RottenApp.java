@@ -10,28 +10,31 @@ public class RottenApp {
     public static ArrayList<String> PalabrasVetadas = new ArrayList<>();
     public static ArrayList<String> ComentariosBorrados = new ArrayList<>();
     static int UserIdLogged; 
-    static int idPeliculaSelect ;
+    static int idPeliculaSelect;
 
     public static void main(String[] args) {
         ContenidoInicial();
         Menus.MenuLogIn();
     }
     public static void ContenidoInicial() {
-        Usuarios.add(new Usuarios("Pepe","1",true, 0));
-        Usuarios.add(new Usuarios("Ana" , "2" , false, 1));
-        Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
-        Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
-        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"autor", "pelicula",0));
-        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"autor","pelicula",1));
-        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"Tarantino","pelicula tarantido",2));
-        Peliculas.add(new Pelicula("Frozen", 108, 5.1, Pelicula.genero.animacion,"Duncan","sergi",3));
-        Peliculas.add(new Pelicula("El silencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Rua","valiente",4));
-        Peliculas.add(new Pelicula("ilencio de los corderos", 120, 4.3, Pelicula.genero.terror,"Sergio","falopero",5));
-        PalabrasVetadas.add("Bueno");
-        PalabrasVetadas.add("nazi");
-        PalabrasVetadas.add("Duncan");
-        PalabrasVetadas.add("Sergi");
-        
+        Usuarios.add(new Usuarios("Pepe","pepe",true, 0));
+        Usuarios.add(new Usuarios("Ana" , "ana" , false, 1));
+        Usuarios.add(new Usuarios("Duncan" , "duncan" , true, 2));
+        Usuarios.add(new Usuarios("Marra" , "sergi" , false, 3));
+        Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"Dean DeBlois", "En la película Cómo entrenar a tu dragón, un joven vikingo llamado Hipo debe demostrar su valía al entrenar a un dragón herido y unir a su tribu con estas criaturas antes enemigas. A medida que crece su amistad, descubre un secreto que cambiará el futuro de ambos mundos.",0));
+        Peliculas.add(new Pelicula("American History X", 120, 4.1, Pelicula.genero.drama,"Tony Kaye","American History X es una película que cuenta la historia de un ex-neonazi llamado Derek Vinyard que busca redimirse tras salir de prisión y ver cómo su ideología de odio ha afectado a su familia y comunidad, en una reflexión sobre la discriminación racial y la violencia.",1));
+        Peliculas.add(new Pelicula("Indiana Jones: En busca del arca perdida", 115, 3.5, Pelicula.genero.aventura,"Steven Spielberg","Indiana Jones: En busca del arca perdida sigue al aventurero Indiana Jones en su misión de encontrar el arca de la alianza antes de que caiga en manos de los nazis durante la Segunda Guerra Mundial, enfrentando peligrosos obstáculos y descubriendo secretos ancestrales a lo largo del camino.",2));
+        Peliculas.add(new Pelicula("Frozen", 98, 5.1, Pelicula.genero.animacion,"Chris Buck","Frozen es una película de animación de Disney que cuenta la historia de dos hermanas, Elsa y Anna, en un reino atrapado en un invierno eterno debido a los poderes de hielo de Elsa. Anna se embarca en una peligrosa aventura para encontrar a su hermana y poner fin al invierno, mientras aprenden el valor del amor fraternal y el poder de ser uno mismo",3));
+        Peliculas.add(new Pelicula("El silencio de los corderos", 115, 4.3, Pelicula.genero.terror,"Jonathan Demme","El silencio de los corderos es una película de suspense psicológico en la que Clarice Starling, una joven agente del FBI, debe entrevistar al famoso asesino en serie Hannibal Lecter para obtener pistas sobre un nuevo caso. Sin embargo, se ve arrastrada a un peligroso juego del gato y el ratón con otro asesino en serie, Buffalo Bill, mientras lucha por mantenerse viva y resolver el caso.",4));
+        Peliculas.add(new Pelicula("El club de la lucha", 139, 4.7, Pelicula.genero.drama, "David Fincher", "Brad Pitt y Edward Norton se involucran en un peligroso juego subterráneo de peleas mientras lidian con problemas de identidad y alienación en la sociedad de consumo moderna.", 5));        
+        PalabrasVetadas.add("hitler");
+        PalabrasVetadas.add("loco");
+        PalabrasVetadas.add("esquizofrenia");
+        PalabrasVetadas.add("huérfana");
+        PalabrasVetadas.add("huérfana");
+        PalabrasVetadas.add("caníbal");
+        PalabrasVetadas.add("secuestro");
+        PalabrasVetadas.add("psicópata");
         
     }
     //Setter y Getter
@@ -176,7 +179,7 @@ public class RottenApp {
         SeleccionaPeliculaPorId();
     }
     //Habria que hacer algo con esto, WTF JHON?
-    public static void SeleccionaPeliculaPorId() {
+    public static int SeleccionaPeliculaPorId() {
         System.out.println("Elige el id la pelicula que deseas seleccionar: ");
         int id = PideInt(); 
         if ((id -1 )> Peliculas.size()) {
@@ -187,6 +190,7 @@ public class RottenApp {
             idPeliculaSelect = id; 
             Menus.ImprimeFichaPelicula();
         }
+        return id;
         
     }
     public static void SeleccionarPeliculaPorIndice() {

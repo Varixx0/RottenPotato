@@ -27,7 +27,7 @@ public class Pelicula {
     }
 
     //Arrays
-    public static ArrayList<String> Comentarios = new ArrayList<>();
+    public  ArrayList<String> Comentarios = new ArrayList<>();
     
     //Setters y getters
     public String getNombre() {
@@ -78,7 +78,7 @@ public class Pelicula {
     
 
     //Función que añade comentario a la pelicula que escoja el usuario 
-    public static void añadirComentario(String comentario){
+    public static void añadirComentario(String comentario,int num){
         String palabras [] = comentario.split("\\s+"); //Divide el comentario en palabras
         boolean esta = false;
         //Este for comprueba cada palabra del comentario con las del array de palabras vetadas
@@ -89,18 +89,16 @@ public class Pelicula {
             }
         }
         //Si una palabra vetada está en el comentario se añade al array de comentarios borrados, junto con el nombre del usuario que lo ha escrito
-       if (esta) {
-        System.out.println("Has usado una palabra vetada");
-        RottenApp.ComentariosBorrados.add(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre() + ": " + comentario);
-       }
-       //Si no contiene palabras vetadas se añade al array de comentarios
-       else{
-        Comentarios.add( RottenApp.Usuarios.get(RottenApp.UserIdLogged).getNombre() + ": " + comentario);
-       }
-       Menus.ImprimeMenu();
+        if (esta) {
+            System.out.println("Has usado una palabra vetada");
+            RottenApp.ComentariosBorrados.add(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre() + ": " + comentario);
+        }
+        //Si no contiene palabras vetadas se añade al array de comentarios
+        else{
+            RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.add(RottenApp.Usuarios.get(RottenApp.UserIdLogged).getNombre()+": "+comentario);
+        }
+        Menus.ImprimeMenu();
     }
-    
-
     
     //Función para agregar valoración a un película debe ser entre 0.0 y 5.0
     public void agregarValoracion(double valor){
@@ -117,7 +115,7 @@ public class Pelicula {
             return ("No hay comentarios");
         }
         else{
-            return Comentarios.get(indice);
+            return RottenApp.Peliculas.get(indice).Comentarios.get(indice);
         }
     }
     

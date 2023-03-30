@@ -338,7 +338,7 @@ public class Menus {
     public static void ImprimeMenuComentar() {
         System.out.println("Introduce el comentario que quieras poner: ");
         String Comentario = RottenApp.PideString();
-        RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).añadirComentario(Comentario);
+        RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).añadirComentario(Comentario,RottenApp.idPeliculaSelect);
     }
     public static void ImprimeMenuAdministrarcomentarios(){
         System.out.println("////////ADMINISTRADOR////////");
