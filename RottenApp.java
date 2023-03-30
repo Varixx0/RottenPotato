@@ -106,12 +106,20 @@ public class RottenApp {
        }
        Menus.ImprimeMenu();
     }
+    public static void noSeEncuentran(){
+        System.out.println("No se han encontrado películas");
+        Menus.ImprimeMenuVerPeliculasBuscarPelicula();
+    }
     public static void BuscarPeliculaTitulo() {
         System.out.println("¿Que pelicula quieres buscar?");
         String Titulo= PideString(); 
         for (int i = 0; i < Peliculas.size(); i++) {
             if (Peliculas.get(i).getNombre().indexOf(Titulo)!=-1) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+            }
+            else{
+                noSeEncuentran();
+                break;
             }
         }
         SeleccionaPeliculaPorId();
@@ -123,6 +131,10 @@ public class RottenApp {
             if (Peliculas.get(i).getAutor().indexOf(Autor)!=-1) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
+            else{
+                noSeEncuentran();
+                break;
+            }
         }
         SeleccionaPeliculaPorId();
     }
@@ -133,6 +145,10 @@ public class RottenApp {
             if (Peliculas.get(i).getValoracion()>Valor) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
             }
+            else{
+                noSeEncuentran();
+                break;
+            }
         }
         SeleccionaPeliculaPorId();
     }
@@ -142,6 +158,10 @@ public class RottenApp {
         for (int i = 0; i < Peliculas.size(); i++) {
             if (Peliculas.get(i).getAutor().equals(Genero)) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+            }
+            else{
+                noSeEncuentran();
+                break;
             }
         }
         SeleccionaPeliculaPorId();
