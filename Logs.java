@@ -29,24 +29,34 @@ public class Logs {
         //Lo hago asi en lugar de con un boolean porque de esta manera puedo devolver el id del usuario que trata de registrarse
         if (Comprobacio.UsuarioExiste(username)!=-1) {
             int idUsuario= Comprobacio.UsuarioExiste(username);
-            System.out.println("Por favor introduce la contraseña: ");
-            String Cont = RottenApp.PideString(); 
-            if (Comprobacio.ComparaConras(Cont, idUsuario)) {
-                System.out.println("Buenos dias " + RottenApp.Usuarios.get(idUsuario).getNombre()) ;
-                System.out.println("////////////////");
-                RottenApp.UserIdLogged=idUsuario;
-                Menus.ImprimeMenu();
-            } else {
-                System.out.println("Contraseña incorrecta");
+            if (RottenApp.Usuarios.get(idUsuario).getBloqueado()) {
+                System.out.println("Esa cuenta está bloqueada");
                 Menus.MenuLogIn();
             }
-
-        } else {
-            System.out.println("La cuenta a la que intentas acceder no existe");
-            Menus.MenuLogIn();
+            else{
+                System.out.println("Por favor introduce la contraseña: ");
+                String Cont = RottenApp.PideString(); 
+                if (Comprobacio.ComparaConras(Cont, idUsuario)) {
+                    System.out.println("Buenos dias " + RottenApp.Usuarios.get(idUsuario).getNombre()) ;
+                    System.out.println("////////////////");
+                    RottenApp.UserIdLogged=idUsuario;
+                    Menus.ImprimeMenu();
+                } 
+                else {
+                System.out.println("Contraseña incorrecta");
+                Menus.MenuLogIn();
+                }
+            }
+            } 
+            else {
+                System.out.println("La cuenta a la que intentas acceder no existe");
+                Menus.MenuLogIn();
         }
+            }
+            
         
-    }
+    
+
     //Administrar cuentas
     public static void EliminarCuentas() {
         int seleccion=RottenApp.SeleccionaCuenta();
