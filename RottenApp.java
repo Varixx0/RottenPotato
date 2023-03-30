@@ -97,7 +97,7 @@ public class RottenApp {
         int duracion = PideInt();
         System.out.println("Dame el autor de la película");
         String Autor = PideString();
-        System.out.println("Dame la valoración de la película");
+        System.out.println("Dame la valoración de la película de 1 a 5 estrellas");
         double valoracion = PideDouble();
         Pelicula.genero genero = PideGenero();
         System.out.println("Esccribe una descripción");
