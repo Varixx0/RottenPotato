@@ -111,7 +111,7 @@ public class Pelicula {
     }
     //Funcion para pasarle la informacion a la ficha en Ver Pelicula
     public static String InfoComentarios(int indice) {  
-        if (RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.isEmpty()) {
+        if (RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size() <0) {
             return ("No hay comentarios");
         }
         else{
