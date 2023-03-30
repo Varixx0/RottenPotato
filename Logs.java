@@ -60,7 +60,12 @@ public class Logs {
     //Administrar cuentas
     public static void EliminarCuentas() {
         int seleccion=RottenApp.SeleccionaCuenta();
-        RottenApp.Usuarios.remove(seleccion);
+        if ((seleccion ) >= RottenApp.Usuarios.size()) {
+            System.out.println("Ese usuario no existe");
+        }
+        else{
+            RottenApp.Usuarios.remove(seleccion);
+        }
         Menus.ImprimeMenu();
     }
     //Opcion de admin, adaptable al publico general, quitar seleccion cuenta
@@ -104,7 +109,13 @@ public class Logs {
     }
     public static void BloquearUsuario(){
         int seleccion = RottenApp.SeleccionaCuenta();
-        RottenApp.Usuarios.get(seleccion).setBloquedo(true);
+        if (seleccion >= RottenApp.Usuarios.size()) {
+            System.out.println("Ese usuario no existe");
+        }
+        else{
+            RottenApp.Usuarios.get(seleccion).setBloquedo(true);
+            
+        }
         Menus.ImprimeMenu();
     }
     //Desbloquear usuaruis
@@ -113,7 +124,12 @@ public class Logs {
         //Selecciona la id de la cuenta que quieras bloquear
         System.out.println("Selecciona el id que desea desbloquear");
         int seleccion = RottenApp.PideInt();
-        RottenApp.Usuarios.get(seleccion).setBloquedo(false);
+        if (seleccion >= RottenApp.Usuarios.size()) {
+            System.out.println("Ese usuario no existe");
+        }
+        else{
+            RottenApp.Usuarios.get(seleccion).setBloquedo(false);
+        }
         Menus.ImprimeMenu();
     }
     //Ver usuarios bloqueados

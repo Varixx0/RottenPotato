@@ -201,6 +201,7 @@ public class Menus {
         System.out.println("4.- Cambiar género");
         System.out.println("5.- Cambiar descripción");
         System.out.println("6.- Eliminar Película");
+        System.out.println("7.- Salir");
         MenuAdministrarPeliculas();
     }
     public static void MenuAdministrarPeliculas(){
@@ -218,6 +219,8 @@ public class Menus {
                 Pelicula.CambiarDescripcion();
             case 6:
                 Pelicula.EliminarPelicula();
+            case 7:
+                ImprimeMenu();
             default:
                 System.out.println("Esa opción no existe, elige otra");
                 ImprimeMenuAdministrarPeliculas();
