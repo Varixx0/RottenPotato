@@ -26,7 +26,7 @@ public class Pelicula {
         this.Autor=Autor;
     }
 
-    //Arrays
+    //La array de comentarios es independiente de cada objeto para que cada comentario aparezca solo en su pelicula
     public  ArrayList<String> Comentarios = new ArrayList<>();
     
     //Setters y getters
