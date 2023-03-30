@@ -173,6 +173,9 @@ public class Menus {
             case 3:
                 ImprimeMenu();
                 break;
+            default:
+                System.out.println("Esa opción no existe");
+                ImprimeMenuVerPeliculas();
             }
     }
     public static void SelectorVarPeliculaAdmin() {
@@ -189,7 +192,10 @@ public class Menus {
                 break;
             case 4:
                 ImprimeMenuAdministrarPeliculas();
-            break;
+                break;
+            default:
+                System.out.println("Esa opción no existe");
+                ImprimeMenuVerPeliculas();
             }
     }
 
@@ -281,8 +287,6 @@ public class Menus {
         System.out.println("GENERO: " + String.valueOf(RottenApp.Peliculas.get(num).getGenero()));
         System.out.println("/////////////////");
         System.out.println("DESCRIPCION: " +RottenApp.Peliculas.get(num).getDescripcion());
-        
-
     }
     //Imprime los 3 ultimos comentarios, te deja entrar a una subpagina con todos los comentarios.
     public static void ImprimeTresComentarios() {
@@ -374,11 +378,11 @@ public class Menus {
                 break;
             case 5:
                 ImprimeMenuAdministrarcomentarios();
-            break;
+                break;
             default:
                 System.out.println("Opción inválida, elige otra vez.");
                 ImprimeMenuComentarios();
-             break;
+                break;
             }
         
     }
@@ -427,7 +431,7 @@ public class Menus {
             default:
                 System.out.println("Opción inválida, elige otra vez.");
                 MenuAdministrarCuentas();
-             break;
+                break;
             }
     }
 
@@ -457,7 +461,7 @@ public class Menus {
             default:
                 System.out.println("Opción inválida, elige otra vez.");
                 MenuAdminBloqDesbloq();
-             break;
+                break;
             }
     
     }
