@@ -17,8 +17,8 @@ public class RottenApp {
         Menus.MenuLogIn();
     }
     public static void ContenidoInicial() {
-        Usuarios.add(new Usuarios("Pepe","1234",true, 0));
-        Usuarios.add(new Usuarios("Ana" , "HolaSoyAna" , false, 1));
+        Usuarios.add(new Usuarios("Pepe","1",true, 0));
+        Usuarios.add(new Usuarios("Ana" , "2" , false, 1));
         Usuarios.add(new Usuarios("Duncan" , "InLoveWithSofi" , true, 2));
         Usuarios.add(new Usuarios("Marra" , "GafasDeJeff" , false, 3));
         Peliculas.add(new Pelicula("Como entrenar a tu dragon", 98, 5, Pelicula.genero.infantil,"autor", "pelicula",0));
