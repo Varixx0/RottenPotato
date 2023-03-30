@@ -179,8 +179,15 @@ public class RottenApp {
     public static void SeleccionaPeliculaPorId() {
         System.out.println("Elige el id la pelicula que deseas seleccionar: ");
         int id = PideInt(); 
-        idPeliculaSelect = id; 
-        Menus.ImprimeFichaPelicula();
+        if ((id -1 )> Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenuVerPeliculasBuscarPelicula();
+        }
+        else{
+            idPeliculaSelect = id; 
+            Menus.ImprimeFichaPelicula();
+        }
+        
     }
     public static void SeleccionarPeliculaPorIndice() {
         System.out.println("Elige la pelicula que deseas seleccionar: ");
