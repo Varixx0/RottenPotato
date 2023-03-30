@@ -399,12 +399,12 @@ public class Menus {
     }
     //imprime todos los comentarios
     public static void TodosLosComentarios() {
-        for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
+        for (int i = 0; i < RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size(); i++) {
             System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
         }
         ImprimeMenuComentarios();
     }public static void TodosLosComentarios(char letra) {
-        for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
+        for (int i = 0; i < RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size(); i++) {
             System.out.println((i+1)+ " "+RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
         }
         
