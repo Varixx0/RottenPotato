@@ -338,7 +338,6 @@ public class Menus {
         System.out.println("1.- Autorizar Comentarios");
         System.out.println("2.- Borrar Comentarios");
         System.out.println("3.- Salir");
-        System.out.println("4.- Modificar comentarios <Provisional>");
         SelectorMenuAdministarComentarios();
     }
     public static void SelectorMenuAdministarComentarios(){

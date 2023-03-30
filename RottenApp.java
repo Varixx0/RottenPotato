@@ -31,6 +31,8 @@ public class RottenApp {
         PalabrasVetadas.add("nazi");
         PalabrasVetadas.add("Duncan");
         PalabrasVetadas.add("Sergi");
+        
+        
     }
     //Setter y Getter
     public static int getUserIdLogged() {
@@ -214,6 +216,7 @@ public class RottenApp {
             int pelicula = RottenApp.PideInt() - 1;
             RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion));
             RottenApp.ComentariosBorrados.remove(seleccion);
+            Menus.ImprimeTresComentarios();
         }
         else{
             System.out.println("No hay comentarios borrados");
