@@ -130,10 +130,16 @@ public class Pelicula {
         }
         int pelicula = RottenApp.PideInt() - 1;
         if (RottenApp.Peliculas.get(pelicula).Comentarios.size() > 0) {
-            Menus.TodosLosComentarios();
+            Menus.TodosLosComentarios('e');
             System.out.println("Ahora dime el comentario que quieres borrar");
-            int comentario = RottenApp.PideInt();
-            RottenApp.Peliculas.get(pelicula).Comentarios.remove(comentario);
+            int comentario = RottenApp.PideInt()-1;
+            if (comentario +1 >= RottenApp.Peliculas.get(pelicula).Comentarios.size()) {
+                System.out.println("Ese comentario no existe");
+            }
+            else{
+                RottenApp.Peliculas.get(pelicula).Comentarios.remove(comentario);
+                Menus.ImprimeMenu();
+            }
         }
         else{
             System.out.println("Esa película no tiene comentarios");
@@ -163,66 +169,111 @@ public class Pelicula {
     }
     public static void CambiarNombre(){
         int pelicula = ElegirPelícula();
-        System.out.println("Este su nombre antiguo antiguo");
-        System.out.println(RottenApp.Peliculas.get(pelicula).getNombre());
-        System.out.println("Dime el nombre nuevo");
-        RottenApp.Peliculas.get(pelicula).setNombre(RottenApp.PideString());
-        nuevaFicha(pelicula);
+        if (pelicula >= RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            System.out.println("Este su nombre antiguo antiguo");
+            System.out.println(RottenApp.Peliculas.get(pelicula).getNombre());
+            System.out.println("Dime el nombre nuevo");
+            RottenApp.Peliculas.get(pelicula).setNombre(RottenApp.PideString());
+            nuevaFicha(pelicula);
+            Menus.ImprimeMenu();
+        }
     }
 
     public static void CambiarValoracion(){
         int pelicula = ElegirPelícula();
-        System.out.println("Esta es su vieja valoración " + RottenApp.Peliculas.get(pelicula).getValoracion());
-        System.out.println("Dame su nueva valoración");
-        RottenApp.Peliculas.get(pelicula).setValoracion(RottenApp.PideDouble());
-        nuevaFicha(pelicula);
+        if (pelicula >= RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            System.out.println("Esta es su vieja valoración " + RottenApp.Peliculas.get(pelicula).getValoracion());
+            System.out.println("Dame su nueva valoración");
+            RottenApp.Peliculas.get(pelicula).setValoracion(RottenApp.PideDouble());
+            nuevaFicha(pelicula);
+            Menus.ImprimeMenu();
+        }
+        
     }
 
     public static void CambiarDuracion(){
         int pelicula = ElegirPelícula();
-        System.out.println("Esta es su antigua duración " + RottenApp.Peliculas.get(pelicula).getDuracion()+ " minutos");
-        int valoracion;
-        do {
-            System.out.println("Dame su nueva duración");
-            valoracion = RottenApp.PideInt();
-            if (valoracion < 60) {
-                System.out.println("Esta no es la duración de un largometraje");
-                System.out.println();
-            }
-        } while (valoracion < 60);
-        RottenApp.Peliculas.get(pelicula).setValoracion(valoracion);
-        nuevaFicha(pelicula);
+        if (pelicula >= RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            System.out.println("Esta es su antigua duración " + RottenApp.Peliculas.get(pelicula).getDuracion()+ " minutos");
+            int valoracion;
+            do {
+                System.out.println("Dame su nueva duración");
+                valoracion = RottenApp.PideInt();
+                if (valoracion < 60) {
+                    System.out.println("Esta no es la duración de un largometraje");
+                    System.out.println();
+                }
+            } while (valoracion < 60);
+            RottenApp.Peliculas.get(pelicula).setValoracion(valoracion);
+            nuevaFicha(pelicula);
+            Menus.ImprimeMenu();
+        }
     }
 
     public static void CambiarGenero(){
         int pelicula = ElegirPelícula();
-        System.out.println("Este es el antiguo género de la película " + RottenApp.Peliculas.get(pelicula).getGenero());
-        System.out.println("Dime el género nuevo de la película");
-        Pelicula.genero genero = RottenApp.PideGenero();
-        RottenApp.Peliculas.get(pelicula).setGenero(genero);
-       nuevaFicha(pelicula);
+        if (pelicula >= RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            System.out.println("Este es el antiguo género de la película " + RottenApp.Peliculas.get(pelicula).getGenero());
+            System.out.println("Dime el género nuevo de la película");
+            Pelicula.genero genero = RottenApp.PideGenero();
+            RottenApp.Peliculas.get(pelicula).setGenero(genero);
+            nuevaFicha(pelicula);
+            Menus.ImprimeMenu();
+        }
+        
     }
 
     public static void CambiarDescripcion(){
         int pelicula = ElegirPelícula();
-        System.out.println("Este es la antigua descripción");
-        System.out.println(RottenApp.Peliculas.get(pelicula).getDescripcion());
-        System.out.println();
-        System.out.println("Dame la nueva descripción");
-        RottenApp.Peliculas.get(pelicula).setDescripcion(RottenApp.PideString());
-        nuevaFicha(pelicula);
+        if (pelicula >= RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            System.out.println("Este es la antigua descripción");
+            System.out.println(RottenApp.Peliculas.get(pelicula).getDescripcion());
+            System.out.println();
+            System.out.println("Dame la nueva descripción");
+            RottenApp.Peliculas.get(pelicula).setDescripcion(RottenApp.PideString());
+            nuevaFicha(pelicula);
+            Menus.ImprimeMenu();
+        }
+        
     }
 
     public static void EliminarPelicula(){
         int pelicula = ElegirPelícula('e');
-        System.out.println("\n");
-        System.out.println("Así era la lista antes");
-        Menus.VerPeliculas();
-        RottenApp.Peliculas.remove(pelicula);
-        System.out.println("\n");
-        System.out.println("\n");
-        System.out.println("Así es ahora");
-        Menus.VerPeliculas();
+        if (pelicula >= RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            System.out.println("\n");
+            System.out.println("Así era la lista antes");
+            Menus.VerPeliculas();
+            RottenApp.Peliculas.remove(pelicula);
+            System.out.println("\n");
+            System.out.println("\n");
+            System.out.println("Así es ahora");
+            Menus.VerPeliculas();
+        }
+        
 
     }
 }

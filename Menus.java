@@ -399,6 +399,11 @@ public class Menus {
             System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
         }
         ImprimeMenuComentarios();
+    }public static void TodosLosComentarios(char letra) {
+        for (int i = 0; i < Pelicula.Comentarios.size(); i++) {
+            System.out.println((i+1)+ " "+RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
+        }
+        
     }
     //Menu administrador de cuentas
     public static void MenuAdministrarCuentas() {

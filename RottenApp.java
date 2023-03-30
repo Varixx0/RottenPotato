@@ -226,7 +226,7 @@ public class RottenApp {
         Menus.VerPalabrasVetadas();
         System.out.println("Elige la palabra vetada");
         int posiPalabra = RottenApp.PideInt();
-        if (RottenApp.PalabrasVetadas.get(posiPalabra).isEmpty()) {
+        if (posiPalabra >= PalabrasVetadas.size()) {
             System.out.println("Esa palabra no existe");
         }
         else{
