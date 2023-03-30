@@ -76,6 +76,7 @@ public class RottenApp {
         int seleccion = PideInt();
         if (seleccion < 1 || seleccion > generos.length) {
             System.out.println("Selección inválida");
+            Menus.ImprimeMenu();
             return null;
         } else {
             return generos[seleccion - 1];
@@ -152,9 +153,17 @@ public class RottenApp {
     }
     public static void SeleccionarPeliculaPorIndice() {
         System.out.println("Elige la pelicula que deseas seleccionar: ");
-        int id = PideInt(); 
-        idPeliculaSelect = id-1; 
-        Menus.ImprimeFichaPelicula();
+        int id = PideInt();
+        if (id > RottenApp.Peliculas.size()) {
+            System.out.println("Esa película no existe");
+            Menus.ImprimeMenu();
+        }
+        else{
+            idPeliculaSelect = id-1; 
+            Menus.ImprimeFichaPelicula();
+        }
+        
+        
     }
     //Función para añadir palabras al array de palabras vetadas, no deja tener dos palabras iguales
     public static void añadirPalabraVetada(){
