@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/*
+ * Rotten App
+ */
 
 public class RottenApp {
     private static Scanner user = new Scanner (System.in);
@@ -35,7 +37,6 @@ public class RottenApp {
         PalabrasVetadas.add("caníbal");
         PalabrasVetadas.add("secuestro");
         PalabrasVetadas.add("psicópata");
-        
     }
     //Setter y Getter
     public static int getUserIdLogged() {
