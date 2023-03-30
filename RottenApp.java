@@ -110,10 +110,13 @@ public class RottenApp {
        }
        Menus.ImprimeMenu();
     }
+    //El mensaje que se imprime cuando no encuentra una pelicula
     public static void noSeEncontro(){
         System.out.println("No se han encontrado películas");
         Menus.ImprimeMenuVerPeliculasBuscarPelicula();
     }
+
+    // METODOS PARA BUSCAR PELICULAS, Busca por los distintos atributos asignados a las peliculas
     public static void BuscarPeliculaTitulo() {
         System.out.println("¿Que pelicula quieres buscar?");
         String Titulo= PideString();
@@ -179,7 +182,7 @@ public class RottenApp {
         }
         SeleccionaPeliculaPorId();
     }
-    //Habria que hacer algo con esto, WTF JHON?
+    //Diferentes metodos para seleccionar pelicula dependiendo de la situacion
     public static int SeleccionaPeliculaPorId() {
         System.out.println("Elige el id la pelicula que deseas seleccionar: ");
         int id = PideInt(); 
@@ -226,7 +229,7 @@ public class RottenApp {
         } 
         Menus.ImprimeMenuPalabrasVetadas();
     }
-
+    //Funcion que borra palabras de la array palabras vetadas 
     public static void BorrarPalabrasVetadas(){
         Menus.VerPalabrasVetadas();
         System.out.println("Elige la palabra vetada");
