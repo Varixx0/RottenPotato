@@ -106,63 +106,72 @@ public class RottenApp {
        }
        Menus.ImprimeMenu();
     }
-    public static void noSeEncuentran(){
+    public static void noSeEncontro(){
         System.out.println("No se han encontrado películas");
         Menus.ImprimeMenuVerPeliculasBuscarPelicula();
     }
     public static void BuscarPeliculaTitulo() {
         System.out.println("¿Que pelicula quieres buscar?");
-        String Titulo= PideString(); 
+        String Titulo= PideString();
+        boolean seEncontro = false;
         for (int i = 0; i < Peliculas.size(); i++) {
             if (Peliculas.get(i).getNombre().indexOf(Titulo)!=-1) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+                seEncontro = true;
             }
-            else{
-                noSeEncuentran();
-                break;
-            }
+            
+        }
+        if (!seEncontro) {
+            noSeEncontro();
         }
         SeleccionaPeliculaPorId();
     }
     public static void BuscarPeliculaAutor() {
         System.out.println("¿Que Autor quieres buscar?");
         String Autor= PideString(); 
+        boolean seEncontro = false;
         for (int i = 0; i < Peliculas.size(); i++) {
             if (Peliculas.get(i).getAutor().indexOf(Autor)!=-1) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+                seEncontro = true;
             }
             else{
-                noSeEncuentran();
-                break;
+                
             }
+        }
+        if (!seEncontro) {
+            noSeEncontro();
         }
         SeleccionaPeliculaPorId();
     }
     public static void BuscarPeliculaValoracion(){
         System.out.println("¿A partir de que valoracion quieres buscar?");
-        Double Valor = PideDouble(); 
+        Double Valor = PideDouble();
+        boolean seEncontro = false; 
         for (int i = 0; i < Peliculas.size(); i++) {
             if (Peliculas.get(i).getValoracion()>Valor) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+                seEncontro = true;
             }
-            else{
-                noSeEncuentran();
-                break;
-            }
+        }
+        if (!seEncontro) {
+            noSeEncontro();
         }
         SeleccionaPeliculaPorId();
     }
     public static void BuscarPeliculaGenero() {
         System.out.println("¿Que Genero quieres buscar?");
         Pelicula.genero Genero= PideGenero(); 
+        boolean seEncontro = false;
         for (int i = 0; i < Peliculas.size(); i++) {
-            if (Peliculas.get(i).getAutor().equals(Genero)) {
+            if (Peliculas.get(i).getGenero().equals(Genero)) {
                 System.out.println("ID: " + Peliculas.get(i).getId() + " " + Peliculas.get(i).getNombre());
+                seEncontro = true;
             }
-            else{
-                noSeEncuentran();
-                break;
-            }
+           
+        }
+        if (!seEncontro) {
+            noSeEncontro();
         }
         SeleccionaPeliculaPorId();
     }
