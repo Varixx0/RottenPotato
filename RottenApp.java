@@ -37,6 +37,12 @@ public class RottenApp {
         PalabrasVetadas.add("caníbal");
         PalabrasVetadas.add("secuestro");
         PalabrasVetadas.add("psicópata");
+        Peliculas.get(0).Comentarios.add("Hipo: Me encantó la banda sonora de esta película");
+        Peliculas.get(1).Comentarios.add("Danny: Es una película dura de ver, pero necesaria para reflexionar sobre el racismo");
+        Peliculas.get(2).Comentarios.add("Marion: El personaje de Indiana Jones es icónico y Harrison Ford lo hizo perfectamente");
+        Peliculas.get(3).Comentarios.add("Elsa: La historia y los personajes me llegaron al corazón, me encantó");
+        Peliculas.get(4).Comentarios.add("Hannibal Lecter: Una de mis películas favoritas de todos los tiempos, Anthony Hopkins es brillante");
+        Peliculas.get(5).Comentarios.add("Tyler Durden: Si aún no has visto esta película, ¡no sabes lo que te estás perdiendo!");
     }
     //Setter y Getter
     public static int getUserIdLogged() {
