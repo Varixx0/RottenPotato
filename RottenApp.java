@@ -49,6 +49,7 @@ public class RottenApp {
         Peliculas.get(4).Comentarios.add("Hannibal Lecter: Una de mis películas favoritas de todos los tiempos, Anthony Hopkins es brillante");
         Peliculas.get(5).Comentarios.add("Tyler Durden: Si aún no has visto esta película, ¡no sabes lo que te estás perdiendo!");
     }
+    //Duncan 
     //Setter y Getter
     public static int getUserIdLogged() {
         return UserIdLogged;
