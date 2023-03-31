@@ -468,8 +468,8 @@ public class Menus {
                 MenuAdminBloqDesbloq();
                 break;
             }
-    
     }
+    
     public static void MenuModificarCuenta() {
         System.out.println("1. Cambiar nombre");
         System.out.println("2. Cambiar Contraseña");
