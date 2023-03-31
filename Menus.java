@@ -44,6 +44,8 @@ public class Menus {
     }
     //Imprime el menu principal
     public static void ImprimeMenu() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("Elige la opcion que deseas ejecutar");
         System.out.println("1. Crear Pelicula");
         System.out.println("2. Ver Peliculas");
@@ -148,6 +150,8 @@ public class Menus {
 
     //Imprime el submenu de ver peliculas
     public static void ImprimeMenuVerPeliculas(){
+        System.out.println("");
+        System.out.println("");
         System.out.println("1. Ver todas las peliculas");
         System.out.println("2. Buscar Pelicula");
         System.out.println("3. Salir");
@@ -239,6 +243,8 @@ public class Menus {
     }
     //Imprime el submenu para buscar pelicula
     public static void ImprimeMenuVerPeliculasBuscarPelicula(){
+        System.out.println("");
+        System.out.println("");
         System.out.println("1. Buscar por Nombre");
         System.out.println("2. Buscar por Autor");
         System.out.println("3. Buscar por Genero");
@@ -274,6 +280,8 @@ public class Menus {
     }
     //Imprime la ficha de la pelicula seleccionada
     public static void ImprimeFichaPelicula() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("/////////////////");
         System.out.println("TITULO: " + RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre());
         System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getDuracion()));
@@ -284,6 +292,8 @@ public class Menus {
         ImprimeTresComentarios();
 
     } public static void ImprimeFichaPelicula(int num) {
+        System.out.println("");
+        System.out.println("");
         System.out.println("/////////////////");
         System.out.println("TITULO: " + RottenApp.Peliculas.get(num).getNombre());
         System.out.println("DURACION: " +String.valueOf(RottenApp.Peliculas.get(num).getDuracion()));
@@ -305,6 +315,8 @@ public class Menus {
         ImprimeMenuComentarios();
     }
     public static void ImprimeMenuComentarios() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("1. Ver todos los comentarios");
         System.out.println("2. Comentar");
         System.out.println("3. Salir");
@@ -391,6 +403,8 @@ public class Menus {
         
     }
     public static void VerComentariosBorrados(){
+        System.out.println("");
+        System.out.println("");
         if (RottenApp.ComentariosBorrados.size() > 0) {
             for (int i = 0; i <RottenApp.ComentariosBorrados.size(); i++) {
                 System.out.println(RottenApp.ComentariosBorrados.get(i));
@@ -404,6 +418,8 @@ public class Menus {
     //fino
     //imprime todos los comentarios
     public static void TodosLosComentarios() {
+        System.out.println("");
+        System.out.println("");
         for (int i = 0; i < RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size(); i++) {
             System.out.println(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.get(i));
         }
@@ -442,6 +458,8 @@ public class Menus {
 
     //Submenu de admin para bloquear/Desbloquear personas. 
     public static void MenuAdminBloqDesbloq() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("1. Ver cuentas bloqueadas");
         System.out.println("2. Bloquear cuentas");
         System.out.println("3. Desbloquear cuentas");
@@ -471,6 +489,8 @@ public class Menus {
     
     }
     public static void MenuModificarCuenta() {
+        System.out.println("");
+        System.out.println("");
         System.out.println("1. Cambiar nombre");
         System.out.println("2. Cambiar Contraseña");
         System.out.println("3. Salir");
@@ -494,20 +514,28 @@ public class Menus {
     }
     //Imprime el de una cuenta a partir de su indice. Ademas le da un numero para que sea seleccionable
     public static void VerCuenta(int id) {
+        System.out.println("");
+        System.out.println("");
         System.out.println(id + ". " + RottenApp.Usuarios.get(id).getNombre());
     }
     public static void VerPeliculas(){
+        System.out.println("");
+        System.out.println("");
         for (int index = 0; index < RottenApp.Peliculas.size(); index++) {
             System.out.println( (index+1) +" "+RottenApp.Peliculas.get(index).getNombre());
         }
     }
 
     public static void VerPalabrasVetadas(){
+        System.out.println("");
+        System.out.println("");
         for (int i = 0; i < RottenApp.PalabrasVetadas.size() ; i++) {
             System.out.println(i+". "+RottenApp.PalabrasVetadas.get(i));
         }
     }
     public static void ListarCuentas() {
+        System.out.println("");
+        System.out.println("");
         for (int i = 0; i < RottenApp.Usuarios.size(); i++) {
             VerCuenta(i);
         }
