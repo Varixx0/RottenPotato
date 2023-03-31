@@ -252,13 +252,12 @@ public class RottenApp {
             }
             System.out.println("Selecciona un comentario");
             int seleccion = RottenApp.PideInt() -1;
-            //int posiPelicula = RottenApp.PalabrasVetadas.get(seleccion).indexOf(':'); idea para hacerlo más óptimo
             System.out.println("Selecciona la película donde quieres guardar el comentario");
             for (int i = 0; i <RottenApp.Peliculas.size(); i++) {
                 System.out.println((i+1) + " " + RottenApp.Peliculas.get(i).getNombre());
             }
             int pelicula = RottenApp.PideInt() - 1;
-            RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion));
+            RottenApp.Peliculas.get(pelicula).Comentarios.add(RottenApp.ComentariosBorrados.get(seleccion).substring((ComentariosBorrados.get(seleccion).indexOf(":"))+2));
             RottenApp.ComentariosBorrados.remove(seleccion);
             Menus.ImprimeTresComentarios();
         }

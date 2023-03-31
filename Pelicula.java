@@ -91,7 +91,7 @@ public class Pelicula {
         //Si una palabra vetada está en el comentario se añade al array de comentarios borrados, junto con el nombre del usuario que lo ha escrito
         if (esta) {
             System.out.println("Has usado una palabra vetada");
-            RottenApp.ComentariosBorrados.add(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre() + ": " + comentario);
+            RottenApp.ComentariosBorrados.add(RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).getNombre() + ": " +RottenApp.Usuarios.get(RottenApp.UserIdLogged).getNombre() + ": " + comentario);
         }
         //Si no contiene palabras vetadas se añade al array de comentarios
         else{
