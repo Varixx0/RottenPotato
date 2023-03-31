@@ -1,7 +1,7 @@
 
 //duncan castellano
 public class Logs {
-    // Falta un boton de salir (Por si acaso)
+    // Falta un boton de salir 
     public static void CrearCuenta() {
         System.out.println("////////////");
         System.out.println("Introduce el username:");
