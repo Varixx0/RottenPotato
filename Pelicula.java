@@ -111,11 +111,13 @@ public class Pelicula {
     }
     //Funcion para pasarle la informacion a la ficha en Ver Pelicula
     public static String InfoComentarios(int indice) {  
-        if (RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios.size() <0) {
-            return ("No hay comentarios");
-        }
-        else{
-            return RottenApp.Peliculas.get(indice).Comentarios.get(indice);
+        ArrayList<String> comentarios = RottenApp.Peliculas.get(RottenApp.idPeliculaSelect).Comentarios;
+        if (comentarios.isEmpty()) {
+            return "No hay comentarios";
+        } else if (indice >= comentarios.size()) {
+            return "El índice de comentario es inválido";
+        } else {
+            return comentarios.get(indice);
         }
     }
     
