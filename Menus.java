@@ -4,8 +4,9 @@ public class Menus {
     public static void MenuLogIn() {
         System.out.println("1. Crear cuenta");
         System.out.println("2. Entrar en mi cuenta");
+        System.out.println("3. Salir");
         SelectorMenuLogIn();
-        //Salir Quizas
+        
     }
     public static void SelectorMenuLogIn() {
         switch (RottenApp.PideInt()) {
@@ -15,6 +16,9 @@ public class Menus {
             case 2:
                 Logs.LogInCuenta();
                 break;
+            case 3:
+                System.out.println("Gracias por usar el programa");
+                System.exit(0);
             case 42:
                 EasterEgg();
                 break;
