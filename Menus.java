@@ -486,8 +486,8 @@ public class Menus {
                 MenuAdminBloqDesbloq();
                 break;
             }
-    
     }
+    
     public static void MenuModificarCuenta() {
         System.out.println("");
         System.out.println("");
